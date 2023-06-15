@@ -1,0 +1,211 @@
+<!-- BODY CONTENT -->
+<div class="container">
+  <form
+    *ngIf="result"
+    [formGroup]="addProfile"
+    (ngSubmit)="onSubmit()"
+    class="container bg-white"
+  >
+    <div class="row">
+      <div class="col-9">
+        <div class="p-3 row">
+          <div class="col-lg-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Name*</mat-label>
+              <input readonly matInput formControlName="name" />
+              <!-- <mat-error>Name is required </mat-error> -->
+            </mat-form-field>
+          </div>
+          <div class="col-lg-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Adhaar Number</mat-label>
+              <input readonly matInput formControlName="aadhar_number" />
+              <!-- <mat-error>Student ID is required </mat-error> -->
+            </mat-form-field>
+          </div>
+          <div class="col-lg-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Date of birth*</mat-label>
+              <input
+                matInput
+                readonly
+                [matDatepicker]="picker"
+                formControlName="date_of_birth"
+              />
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <!-- <mat-error>Date of birth is required </mat-error> -->
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="p-3 row" style="max-width: 100%">
+          <div class="col-lg-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Address*</mat-label>
+              <input matInput formControlName="address" />
+              <mat-error>address is required </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Institute Name</mat-label>
+              <input matInput readonly formControlName="institute_id" />
+              <!-- <mat-error>address is required </mat-error> -->
+            </mat-form-field>
+          </div>
+          <div class="col-lg-4">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter Email Id*</mat-label>
+              <input readonly formControlName="email" type="email" matInput />
+              <mat-error>Email is required </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="p-3 row" style="max-width: 100%">
+          <div class="col-lg-4">
+            <mat-form-field class="" appearance="fill">
+              <mat-label>Enter Mobile Number*</mat-label>
+              <input matInput formControlName="mobile" />
+              <mat-error>Mobile number is required </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-4">
+            <mat-form-field class="" appearance="fill">
+              <mat-label>Division</mat-label>
+              <input matInput readonly formControlName="division_id" />
+              <!-- <mat-error>Mobile number is required </mat-error> -->
+            </mat-form-field>
+          </div>
+          <div class="col-lg-4">
+            <mat-form-field class="" appearance="fill">
+              <mat-label>Class</mat-label>
+              <input matInput readonly formControlName="class_id" />
+              <!-- <mat-error>Mobile number is required </mat-error> -->
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row p-3">
+          <div class="col-lg-4">
+            <mat-form-field class="" appearance="fill">
+              <mat-label>Academic year</mat-label>
+              <input matInput readonly formControlName="academic_id" />
+              <!-- <mat-error>Mobile number is required </mat-error> -->
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-3">
+            <label> Profile Image </label>
+            <!-- <div style="margin-right: 1rem">
+            <label for="">Profile Picture</label> <br />
+            <input type="file" id="my_file" />
+          </div> -->
+            <div class="">
+              <img *ngIf="ImgUrl" src="{{ ImgUrl }}" class="img-fluid img" />
+            </div>
+          </div>
+        </div>
+
+        <div class="container mb-3">
+          <div class="col-sm">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Change Password
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- modal -->
+  <form [formGroup]="changePass" (ngSubmit)="passChange()" #form="ngForm">
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body row flex-column">
+            <div class="col-5">
+              <mat-form-field class="" appearance="fill">
+                <mat-label>Enter new password</mat-label>
+                <input
+                  required
+                  matInput
+                  type="password"
+                  formControlName="password"
+                />
+                <mat-error> required </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-5">
+              <mat-form-field class="" appearance="fill">
+                <mat-label>Re-enter password</mat-label>
+                <input
+                  required
+                  matInput
+                  type="password"
+                  formControlName="re_password"
+                />
+                <mat-error> required </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="submit"
+              data-bs-dismiss="modal"
+              class="btn btn-primary"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <footer
+    class="footer footer-static shadow bg-white"
+    style="min-height: 5.35rem !important"
+  >
+    <div class="float-end mt-4">
+      <button
+        class="btn btn-outline-secondary mr-3"
+        (click)="navigateDashboard()"
+      >
+        Cancel
+      </button>
+      <button class="btn btn-primary mr-3" (click)="navigateDashboard()">
+        Save
+      </button>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,47 @@
+.container-fluid {
+  --bs-gutter-x: 0 !important;
+}
+input,
+select {
+  width: 100%;
+}
+.curspoint ul {
+  cursor: pointer !important;
+}
+
+.btn-primary {
+  background: #4b78bb !important;
+  color: white !important;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black !important;
+  opacity: 1 !important; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: black !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: black !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+::ng-deep input::-webkit-outer-spin-button,
+::ng-deep input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+::ng-deep input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+::ng-deep .mat-form-field-flex {
+  min-height: 45px;
+}

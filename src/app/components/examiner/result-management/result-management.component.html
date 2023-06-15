@@ -1,0 +1,526 @@
+<!-- BEGIN: Content-->
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper container-xxl p-0">
+    <div class="content-header row"></div>
+    <div class="content-body">
+      <!-- BODY CONTENT -->
+      <div
+        class="container shadow"
+        style="
+          max-width: 100%;
+          max-height: 100vh;
+          background: #fff;
+          margin-left: 1rem;
+        "
+      >
+        <!-- SEARCH AND ADD -->
+        <div class="row align-items-center p-3 pb-0" style="gap: 1rem">
+          <div class="col">
+            <!-- <mat-form-field
+              style="
+                width: 80% !important;
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+              "
+              appearance="standard"
+            >
+              <mat-label>Search All</mat-label>
+              <input matInput placeholder="Ex. Pankaj" />
+            </mat-form-field> -->
+            <input
+                  type="text"
+                  class="form-control"
+                  placeholder="search All"
+                  style="height: 45px"
+                />
+          </div>
+          <div class="col">
+            <div
+              class="d-flex float-end align-items-center flex-wrap"
+              style="gap: 1rem"
+            >
+              <div>
+                <select
+                  style="padding: 0.5rem; border-radius: 4px"
+                  name="subject"
+                  id="sub"
+                >
+                  <option value="subject">Hindi</option>
+                  <option value="subject">English</option>
+                  <option value="subject">Maths</option>
+                  <option value="subject">Science</option>
+                </select>
+              </div>
+              <div>
+                <select
+                  style="padding: 0.5rem; border-radius: 4px"
+                  name="class"
+                  id="class"
+                >
+                  <option value="class">B.F.A</option>
+                  <option value="class">C.S.E</option>
+                  <option value="class">Maths</option>
+                  <option value="class">Science</option>
+                </select>
+              </div>
+              <div>
+                <img
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  src="../../../app-assets/images/svg/icons8-four-squares-24.png"
+                  alt=""
+                />
+
+                <!-- Modal -->
+                <!-- <div
+                  class="modal modal-right fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div
+                    class="modal-dialog"
+                    style="
+                      position: fixed;
+                      right: 0;
+                      height: 100%;
+                      margin: auto;
+                      min-width: 35vw;
+                    "
+                  >
+                    <div class="modal-content">
+                      <div class="modal-header" style="margin-top: 10rem">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          <div
+                            class="d-flex justify-content-between align-items-center"
+                          >
+                            <h4 class="m-0 p-0">Examiner</h4>
+                            <img
+                              style="position: absolute; right: 1rem"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                              src="../../../app-assets/images/svg/close-svgrepo-com.svg"
+                              alt=""
+                            />
+                          </div>
+                        </h5>
+                      </div>
+                      <div class="modal-body">
+                        <div>
+                          <span
+                            class="d-flex align-items-center"
+                            style="
+                              border: 0.5px solid #979797;
+                              border-radius: 4px;
+                              gap: 1rem;
+                            "
+                          >
+                            <img
+                              style="
+                                width: 15px;
+                                height: 15px;
+                                margin-left: 1rem;
+                              "
+                              src="../../../app-assets/images/svg/search-solid.svg"
+                              alt=""
+                            />
+                            <input
+                              style="
+                                border: none;
+                                outline: none;
+                                padding: 0.5rem;
+                              "
+                              type="search"
+                            />
+                          </span>
+                        </div>
+                        <div
+                          class="mt-3 d-flex flex-column curspoint"
+                          style="height: 75vh; overflow-x: auto; gap: 1rem"
+                        >
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                          <ul>
+                            Name
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--  -->
+
+        <!-- SEARCH AND ADD -->
+
+        <!-- TABLE -->
+        <div
+          class="table-responsive"
+          style="overflow-y: auto !important; height: 79vh !important"
+        >
+          <table class="datatable table mt-3" style="color: #000">
+            <thead>
+              <tr style="background: #f3f2f7 !important">
+                <th scope="col">Document Name</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Class</th>
+                <th scope="col">Division</th>
+                <th scope="col">Date</th>
+                <th scope="col">Total Students</th>
+                <th scope="col">Upload By</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <!-- Doc Name -->
+                <th scope="row">Answer Sheet.pdf</th>
+                <!-- Subject -->
+                <td>Hindi</td>
+                <!-- Class -->
+                <td>B.A</td>
+                <!-- Division -->
+                <td>1st Sem</td>
+                <!-- Date -->
+                <td>25/08/2022</td>
+                <!-- total students -->
+                <td>53</td>
+                <!-- Upload By -->
+                <td>Jayesh goyal</td>
+                <!-- Action -->
+
+                <td><button class="btn btn-primary">Publish</button></td>
+              </tr>
+
+              <tr>
+                <!-- Doc Name -->
+                <th scope="row">Answer Sheet.pdf</th>
+                <!-- Subject -->
+                <td>Hindi</td>
+                <!-- Class -->
+                <td>B.A</td>
+                <!-- Division -->
+                <td>1st Sem</td>
+                <!-- Date -->
+                <td>25/08/2022</td>
+                <!-- total students -->
+                <td>53</td>
+                <!-- Upload By -->
+                <td>Jayesh goyal</td>
+                <!-- Action -->
+
+                <td><button class="btn btn-primary">Publish</button></td>
+              </tr>
+
+              <tr>
+                <!-- Doc Name -->
+                <th scope="row">Answer Sheet.pdf</th>
+                <!-- Subject -->
+                <td>Hindi</td>
+                <!-- Class -->
+                <td>B.A</td>
+                <!-- Division -->
+                <td>1st Sem</td>
+                <!-- Date -->
+                <td>25/08/2022</td>
+                <!-- total students -->
+                <td>53</td>
+                <!-- Upload By -->
+                <td>Jayesh goyal</td>
+                <!-- Action -->
+
+                <td><button class="btn btn-primary">Publish</button></td>
+              </tr>
+
+              <tr>
+                <!-- Doc Name -->
+                <th scope="row">Answer Sheet.pdf</th>
+                <!-- Subject -->
+                <td>Hindi</td>
+                <!-- Class -->
+                <td>B.A</td>
+                <!-- Division -->
+                <td>1st Sem</td>
+                <!-- Date -->
+                <td>25/08/2022</td>
+                <!-- total students -->
+                <td>53</td>
+                <!-- Upload By -->
+                <td>Jayesh goyal</td>
+                <!-- Action -->
+
+                <td><button class="btn btn-primary">Publish</button></td>
+              </tr>
+
+              <tr>
+                <!-- Doc Name -->
+                <th scope="row">Answer Sheet.pdf</th>
+                <!-- Subject -->
+                <td>Hindi</td>
+                <!-- Class -->
+                <td>B.A</td>
+                <!-- Division -->
+                <td>1st Sem</td>
+                <!-- Date -->
+                <td>25/08/2022</td>
+                <!-- total students -->
+                <td>53</td>
+                <!-- Upload By -->
+                <td>Jayesh goyal</td>
+                <!-- Action -->
+
+                <td><button class="btn btn-primary">Publish</button></td>
+              </tr>
+
+              <tr>
+                <!-- Doc Name -->
+                <th scope="row">Answer Sheet.pdf</th>
+                <!-- Subject -->
+                <td>Hindi</td>
+                <!-- Class -->
+                <td>B.A</td>
+                <!-- Division -->
+                <td>1st Sem</td>
+                <!-- Date -->
+                <td>25/08/2022</td>
+                <!-- total students -->
+                <td>53</td>
+                <!-- Upload By -->
+                <td>Jayesh goyal</td>
+                <!-- Action -->
+
+                <td><button class="btn btn-primary">Publish</button></td>
+              </tr>
+
+              <tr>
+                <!-- Doc Name -->
+                <th scope="row">Answer Sheet.pdf</th>
+                <!-- Subject -->
+                <td>Hindi</td>
+                <!-- Class -->
+                <td>B.A</td>
+                <!-- Division -->
+                <td>1st Sem</td>
+                <!-- Date -->
+                <td>25/08/2022</td>
+                <!-- total students -->
+                <td>53</td>
+                <!-- Upload By -->
+                <td>Jayesh goyal</td>
+                <!-- Action -->
+
+                <td><button class="btn btn-primary">Publish</button></td>
+              </tr>
+
+              <tr>
+                <!-- Doc Name -->
+                <th scope="row">Answer Sheet.pdf</th>
+                <!-- Subject -->
+                <td>Hindi</td>
+                <!-- Class -->
+                <td>B.A</td>
+                <!-- Division -->
+                <td>1st Sem</td>
+                <!-- Date -->
+                <td>25/08/2022</td>
+                <!-- total students -->
+                <td>53</td>
+                <!-- Upload By -->
+                <td>Jayesh goyal</td>
+                <!-- Action -->
+
+                <td><button class="btn btn-primary">Publish</button></td>
+              </tr>
+
+              <tr>
+                <!-- Doc Name -->
+                <th scope="row">Answer Sheet.pdf</th>
+                <!-- Subject -->
+                <td>Hindi</td>
+                <!-- Class -->
+                <td>B.A</td>
+                <!-- Division -->
+                <td>1st Sem</td>
+                <!-- Date -->
+                <td>25/08/2022</td>
+                <!-- total students -->
+                <td>53</td>
+                <!-- Upload By -->
+                <td>Jayesh goyal</td>
+                <!-- Action -->
+
+                <td><button class="btn btn-primary">Publish</button></td>
+              </tr>
+
+              <tr>
+                <!-- Doc Name -->
+                <th scope="row">Answer Sheet.pdf</th>
+                <!-- Subject -->
+                <td>Hindi</td>
+                <!-- Class -->
+                <td>B.A</td>
+                <!-- Division -->
+                <td>1st Sem</td>
+                <!-- Date -->
+                <td>25/08/2022</td>
+                <!-- total students -->
+                <td>53</td>
+                <!-- Upload By -->
+                <td>Jayesh goyal</td>
+                <!-- Action -->
+
+                <td><button class="btn btn-primary">Publish</button></td>
+              </tr>
+
+              <tr>
+                <!-- Doc Name -->
+                <th scope="row">Answer Sheet.pdf</th>
+                <!-- Subject -->
+                <td>Hindi</td>
+                <!-- Class -->
+                <td>B.A</td>
+                <!-- Division -->
+                <td>1st Sem</td>
+                <!-- Date -->
+                <td>25/08/2022</td>
+                <!-- total students -->
+                <td>53</td>
+                <!-- Upload By -->
+                <td>Jayesh goyal</td>
+                <!-- Action -->
+
+                <td><button class="btn btn-primary">Publish</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- TABLE -->
+      </div>
+      <!-- BODY CONTENT -->
+    </div>
+  </div>
+</div>
+<!-- END: Content-->
+
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+
+<!-- BEGIN: Footer-->
+<footer
+  class="footer shadow footer-static footer-light d-flex justify-content-between"
+  style="background: #fff; z-index: 99; position: relative"
+>
+  <div class="row w-100 align-items-center">
+    <div class="col-sm">
+      <div class="d-flex" style="gap: 1rem">
+        <p class="p-0 m-0">Show</p>
+        <select
+          style="border-radius: 10px; width: 3rem"
+          name="entries"
+          id="entries"
+        >
+          <option value="page">All</option>
+          <option value="page">1-24</option>
+          <option value="page">25-50</option>
+        </select>
+        <p class="p-0 m-0">Entries</p>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div>
+        <p style="color: #000" class="m-0 p-0">
+          Showing <span>1</span> out of <span>5</span> entries
+        </p>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="float-end d-flex">
+        <button
+          style="border-radius: 0 0"
+          class="btn btn-outline-secondary rounded-start"
+        >
+          Prev
+        </button>
+        <a style="border-radius: 0 0" href="#" class="btn btn-primary">1</a>
+        <!-- <button style="border-radius: 0" class="btn">1</button>
+      <button style="border-radius: 0" class="btn">2</button>
+      <button style="border-radius: 0" class="btn">3</button> -->
+        <button
+          style="border-radius: 0 0"
+          class="btn btn-outline-secondary rounded-end"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>

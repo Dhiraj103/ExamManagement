@@ -1,0 +1,37 @@
+::ng-deep .mat-form-field-flex {
+  min-height: 45px !important;
+}
+.bs {
+  --bs-gutter-x: 0;
+}
+
+span {
+  border: 1px solid #4b78bb;
+  /* position: absolute;
+  right: -11px !important;
+  top: -20px !important; */
+  background: #4b78bb;
+  padding: 13px;
+  border-radius: 8px 8px 8px 8px;
+  cursor: pointer;
+}
+
+.minus-btn {
+  background-color: red;
+
+  width: fit-content;
+  border-radius: 8px 8px 8px 8px;
+}
+
+.multipleChoiceInput {
+  display: flex;
+  flex-direction: row;
+}
+
+.checkBox {
+  position: absolute;
+  /* top: -46px; */
+  /* left: 400px; */
+  right: -15rem;
+  top: -5px;
+}

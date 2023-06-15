@@ -1,0 +1,161 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="addexaminer" (ngSubmit)="onSubmit()">
+      <div class="row right-div-outer">
+        <div class="col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Select Institute *</mat-label>
+            <mat-select formControlName="institute">
+              <mat-option
+                *ngFor="let institute of institutelist"
+                [value]="institute.id"
+              >
+                {{ institute.institute_name }}</mat-option
+              >
+            </mat-select>
+            <mat-error *ngIf="addexaminer.controls.institute.errors?.required"
+              >Institute is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Teacher ID</mat-label>
+            <input matInput formControlName="employee_id" />
+            <mat-error *ngIf="addexaminer.controls.employee_id.errors?.required"
+              >Teacher ID is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="user_name" />
+            <mat-error *ngIf="addexaminer.controls.user_name.errors?.required"
+              >Name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Mobile</mat-label>
+            <input matInput formControlName="user_mobile" />
+            <mat-error *ngIf="addexaminer.controls.user_mobile.errors?.required"
+              >Mobile is required
+            </mat-error>
+            <mat-error
+              *ngIf="addexaminer.controls.user_mobile.errors?.minLength"
+              >Please enter at least 10 number
+            </mat-error>
+            <mat-error
+              *ngIf="addexaminer.controls.user_mobile.errors?.maxLength"
+              >Please enter at most 10 number
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="pankaj@gmail.com"
+              formControlName="user_email"
+            />
+            <mat-error *ngIf="addexaminer.controls.user_email.errors?.required"
+              >Email is required
+            </mat-error>
+            <mat-error *ngIf="addexaminer.controls.user_email.errors?.email"
+              >Please enter vaild email Id.
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              formControlName="user_password"
+            />
+            <p
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </p>
+            <mat-error
+              *ngIf="addexaminer.controls.user_password.errors?.required"
+              >Password is required
+            </mat-error>
+            <mat-error
+              *ngIf="addexaminer.controls.user_password.errors?.minLength"
+              >Please enter at least 2 number
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Date of Birth</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              formControlName="user_dob"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="addexaminer.controls.user_dob.errors?.required"
+              >Date Of Birth is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Aadhar Number</mat-label>
+            <input matInput formControlName="aadhar_number" />
+            <mat-error
+              *ngIf="addexaminer.controls.aadhar_number.errors?.required"
+              >Aadhar Number is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-4">
+          <label for="">Profile Picture</label> <br />
+          <input type="file" id="my_file" (change)="readUrl($event)" />
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="address" rows="2"></textarea>
+            <mat-error *ngIf="addexaminer.controls.address.errors?.required"
+              >Address is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-12" style="padding-bottom: 24%">
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            class="float-right"
+          >
+            Save
+          </button>
+          <!-- [disabled]="!addCallCenter.valid"  -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

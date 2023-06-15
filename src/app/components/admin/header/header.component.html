@@ -1,0 +1,38 @@
+<nav
+  class="navbar justify-content-between bg-white navbar-expand px-2"
+  style="height: 4.4rem !important"
+>
+  <div class="side-nav-button p-2 me-3" (click)="SideNavToggled()">
+    <i class="fa fa-bars"></i>
+  </div>
+
+  <div class="btn-group">
+    <button
+      class="btn dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton1"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <span class="mr-2 text-gray-600 small">
+        {{ username }}
+      </span>
+      <img
+        style="height: 3rem; width: 3rem"
+        src="{{
+          ImgUrl
+        }} || ../../../../../../assets/images/default-profile-img.jpg"
+        class="img-profile rounded-circle"
+        alt="User Image"
+      />
+    </button>
+    <ul
+      class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end"
+      aria-labelledby="dropdownMenuButton1"
+    >
+      <li><a class="dropdown-item">Profile</a></li>
+      <li><a class="dropdown-item">Log Out</a></li>
+      <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+    </ul>
+  </div>
+</nav>

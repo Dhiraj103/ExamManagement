@@ -1,0 +1,99 @@
+<div class="d-md-flex half">
+  <div class="bg" style="background-image: url('assets/images/login-logo.jpg')"></div>
+  <div class="contents">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-12">
+          <div class="form-block mx-auto">
+            <div class="text-center">
+              <span class="d-flex justify-content-center align-items-center">
+                <!-- <img
+                  src="../../../assets//images/viar.png"
+                  style="width: 10rem"
+                  alt=""
+                /> -->
+                <h3 class="m-0 mt-1 p-1 position-relative">Login to</h3>
+                <img
+                  style="width: 10rem"
+                  src="../../../assets/images/viaex.jpg"
+                  alt=""
+                />
+              </span>
+
+              <!-- <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p> -->
+            </div>
+            <form [formGroup]="login" (ngSubmit)="onSubmit()">
+              <div class="mb-1 mt-5">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Email / User ID</mat-label>
+                  <input type="text" matInput formControlName="user_email" placeholder="Ex. Pankaj@viaexam.com" [(ngModel)]="email" />
+                  <!-- <input
+                    type="text"
+                    matInput
+                    formControlName="user_email"
+                    placeholder="Ex. Pankaj@viaexam.com"
+                  /> -->
+                  <!--<mat-error *ngIf="user_email.hasError('email') && !user_email.hasError('required')">
+                        Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="user_email.hasError('required')">
+                        Email is <strong>required</strong>
+                        </mat-error>-->
+                  <mat-error *ngIf="login.controls.user_email.errors?.required"
+                    >Email is required
+                  </mat-error>
+                  <mat-error *ngIf="login.controls.user_email.errors?.email"
+                    >Please enter vaild email Id.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="mb-1">
+                <div class="d-flex justify-content-between">
+                  <label class="form-label" for="login-password">&nbsp;</label
+                  ><a href="auth-forgot-password-cover.html"
+                    ><small>Forgot Password?</small></a
+                  >
+                </div>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Enter your password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" [(ngModel)]="password" (keyup.enter)="onSubmit()"/>
+                  <!-- <input
+                    matInput
+                    [type]="hide ? 'password' : 'text'"
+                    formControlName="password"
+                  /> -->
+                  <p
+                    mat-icon-button
+                    matSuffix
+                    (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide"
+                  >
+                    <mat-icon>{{
+                      hide ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                  </p>
+                  <mat-error *ngIf="login.controls.password.errors?.required"
+                    >Password is required
+                  </mat-error>
+                  <mat-error *ngIf="login.controls.password.errors?.minLength"
+                    >Please enter at least 4 letters.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <button class="btn btn-primary w-100" tabindex="4">Log in</button>
+            </form>
+            <!-- <span
+              class="d-flex justify-content-center gap-5 h-100"
+              style="align-items: flex-end; position: relative; top: 1rem"
+            >
+              <i style="font-size: 2rem" class="fab fa-facebook hvr-float"></i>
+              <i style="font-size: 2rem" class="fab fa-instagram hvr-float"></i>
+              <i style="font-size: 2rem" class="fab fa-whatsapp hvr-float"></i>
+            </span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

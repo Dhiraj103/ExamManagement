@@ -1,0 +1,358 @@
+<!-- BODY CONTENT -->
+
+<div class="container-fluid ml-3 p-5 bg-white" style="max-width: 100%">
+  <form *ngIf="result" [formGroup]="editExam" (ngSubmit)="addExam()">
+    <div class="row">
+      <div class="col-sm">
+        <mat-form-field appearance="fill">
+          <mat-label>Exam Name*</mat-label>
+          <input matInput formControlName="exam_name" />
+          <mat-error>Exam Name is required </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm">
+        <mat-form-field appearance="fill">
+          <mat-label>Class*</mat-label>
+          <mat-select formControlName="class">
+            <mat-option
+              *ngFor="let class of examinerclassList"
+              [value]="class.id"
+            >
+              {{ class.class_name }}</mat-option
+            >
+          </mat-select>
+          <mat-error>Class is required </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm">
+        <mat-form-field appearance="fill">
+          <mat-label>Division*</mat-label>
+          <mat-select formControlName="division">
+            <mat-option
+              *ngFor="let division of examinerDivisionList"
+              [value]="division.id"
+            >
+              {{ division.division_name }}</mat-option
+            >
+          </mat-select>
+          <mat-error>Division is required </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm"></div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-sm">
+        <mat-form-field appearance="fill">
+          <mat-label>Academic Year*</mat-label>
+          <mat-select formControlName="academic_year">
+            <mat-option
+              *ngFor="let academic_year of examinerAcademicYearList"
+              [value]="academic_year.id"
+            >
+              {{ academic_year.year_name }}</mat-option
+            >
+          </mat-select>
+          <mat-error>Academic Year is required </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm">
+        <mat-form-field appearance="fill">
+          <mat-label>Semester*</mat-label>
+          <mat-select formControlName="semester">
+            <mat-option
+              *ngFor="let semester of examinerSemesterList"
+              [value]="semester.id"
+            >
+              {{ semester.semester_name }}</mat-option
+            >
+          </mat-select>
+          <mat-error>Semester is required </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm">
+        <mat-form-field appearance="fill">
+          <mat-label>Exam Start Date*</mat-label>
+          <input
+            matInput
+            [min]="minDate"
+            [max]="maxDate"
+            [matDatepicker]="picker"
+            formControlName="exam_start_date"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error>Exam Start Date is required </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm">
+        <mat-form-field appearance="fill">
+          <mat-label>Exam End Date*</mat-label>
+          <input
+            matInput
+            [min]="minDate"
+            [max]="maxDate"
+            [matDatepicker]="picker3"
+            formControlName="exam_end_date"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker3"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+          <mat-error>Exam End Date is required </mat-error>
+        </mat-form-field>
+      </div>
+      <!-- <div class="col-sm">
+              <mat-form-field appearance="fill">
+                <mat-label>Exam Date</mat-label>
+
+                <mat-date-range-input [rangePicker]="picker">
+                  <input
+                    matStartDate
+                    formControlName="exam_start_date"
+                    placeholder="Start date"
+                  />
+                  <input
+                    matEndDate
+                    formControlName="exam_end_date"
+                    placeholder="End date"
+                  />
+                </mat-date-range-input>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+
+                <mat-date-range-picker #picker></mat-date-range-picker>
+                <mat-error>Exam Date is required </mat-error>
+              </mat-form-field>
+            </div> -->
+    </div>
+
+    <h3 class="mt-5">List of Subjects</h3>
+
+    <div class="container p-2 shadow" style="max-width: 100%">
+      <div>
+        <div class="row">
+          <div class="col-sm">
+            <mat-form-field appearance="fill">
+              <mat-label>Subject Name*</mat-label>
+              <input matInput formControlName="subject_name" />
+              <mat-error>Subject Name is required </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm d-flex gap-1">
+            <mat-form-field class="w-50" appearance="fill">
+              <mat-label>Total Marks*</mat-label>
+              <input type="number" matInput formControlName="total_marks" />
+              <mat-error>Total Marks is required </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-50" appearance="fill">
+              <mat-label>Pass Marks*</mat-label>
+              <input type="number" matInput formControlName="pass_marks" />
+              <mat-error>Pass Marks is required </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm">
+            <mat-form-field appearance="fill">
+              <mat-label>Exam Date*</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker2"
+                formControlName="exam_date"
+              />
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker2"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+              <mat-error>Exam Date is required </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm">
+            <mat-form-field appearance="fill">
+              <mat-label>Select Que. Paper*</mat-label>
+              <mat-select formControlName="que_paper">
+                <mat-option
+                  *ngFor="let que_paper of examinerQuestionPaperList"
+                  [value]="que_paper.id"
+                >
+                  {{ que_paper.question_paper_name }}</mat-option
+                >
+              </mat-select>
+              <mat-error>Que. Paper is required </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm">
+            <mat-form-field appearance="fill">
+              <mat-label>Select Ideal Ans. Paper*</mat-label>
+              <mat-select formControlName="ideal_ans_paper">
+                <mat-option
+                  *ngFor="let ideal_ans_paper of examinerAnswerPaperList"
+                  [value]="ideal_ans_paper.id"
+                >
+                  {{ ideal_ans_paper.answer_paper_name }}</mat-option
+                >
+              </mat-select>
+              <mat-error> Ideal Ans. Paper is required </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-sm">
+            <mat-form-field class="w-50" appearance="fill">
+              <mat-label>Exam Time</mat-label>
+              <input
+                placeholder="4:00 PM"
+                matInput
+                type="time"
+                step="1800"
+                formControlName="exam_time"
+                [value]="time"
+              />
+              <mat-error>Exam Time is required </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <!-- <div class="col-sm">
+            <button type="submit" class="btn btn-primary">
+              + Add Subjects
+            </button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- TABLE -->
+
+  <div class="mat-elevation-z8 mt-4" style="overflow-x: auto; max-height: 70vh">
+    <table mat-table [dataSource]="dataSource" style="width: 100%">
+      <!-- ID Column -->
+      <ng-container matColumnDef="subject_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Subject Name
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.subject_name }}</td>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="total_mark">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Total Marks
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.total_mark }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="pass_mark">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Pass Marks
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.pass_mark }}</td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="exam_date">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Exam Date
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.exam_date }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="question_paper_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Ques. Paper
+        </th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.question_paper_name }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="answer_paper_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Ideal Ans. Sheet
+        </th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.answer_paper_name }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Action">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Action
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <a class="mx-2">
+            <i class="fas fa-pencil-alt color-orange"></i>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <mat-paginator
+    (page)="handlePageEvent($event)"
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    aria-label="Select page of users"
+  ></mat-paginator>
+  <!-- TABLE -->
+
+  <!-- BEGIN: Footer-->
+  <footer
+    class="footer footer-static shadow bg-white shadow-lg"
+    style="z-index: 9999; position: relative"
+  >
+    <div class="float-end d-flex gap-2 mt-2">
+      <button (click)="navigateDashboard()" class="btn btn-outline-secondary">
+        Cancel
+      </button>
+      <button (click)="onSubmit()" class="btn btn-primary">Update</button>
+    </div>
+  </footer>
+
+  <!-- END: Footer-->
+</div>
+
+<!-- END: Content-->

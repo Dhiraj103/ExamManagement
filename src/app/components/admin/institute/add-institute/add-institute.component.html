@@ -1,0 +1,38 @@
+
+<div class="container">
+    <div class="row">
+        <form [formGroup]="addinstitute" (ngSubmit)="onSubmit()">
+            <div class="row right-div-outer">
+            <div class="col-md-4">
+                <label for="">Institute Name</label> <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Institute Name</mat-label>
+                    <input matInput formControlName="institute">
+                    <mat-error *ngIf="addinstitute.controls.institute.errors?.required">Institute Name is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-4">
+                <label for="">University</label> <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>University </mat-label>
+                    <input matInput formControlName="university">
+                    <mat-error *ngIf="addinstitute.controls.university.errors?.required">University is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-lg-4">
+                <label for="">Logo</label> <br>
+                <input type="file" id="my_file" (change)="readUrl($event)">
+            </div>
+            <div class="clearfix"></div> <br>
+            <div class="col-md-12" style="padding-bottom: 24%;">
+                <button type="submit" mat-raised-button color="primary" class="float-left">Save</button>
+                <!-- [disabled]="!addCallCenter.valid"  -->
+            </div>
+            </div> 
+        </form>
+    </div>
+</div>

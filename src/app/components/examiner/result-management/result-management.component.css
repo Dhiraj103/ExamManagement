@@ -1,0 +1,8 @@
+.curspoint ul {
+  cursor: pointer !important;
+}
+
+.btn-primary {
+  background: #4b78bb !important;
+  color: white !important;
+}

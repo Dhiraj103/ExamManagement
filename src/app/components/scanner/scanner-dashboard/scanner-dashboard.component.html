@@ -1,0 +1,302 @@
+<!-- Begin: Pie Charts -->
+<div
+  class="row"
+  style="padding: 10px 50px 10px 50px; margin-top: 1rem; margin-left: 1rem"
+>
+  <div class="col-lg-6">
+    <div class="card" style="height: 360px">
+      <div class="card-body">
+        <div id="chartContainer1" style="height: 280px; width: 100%"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <canvas id="myCharts" style="width: 100%"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End: Pie Charts -->
+
+<!-- Begin: table  -->
+
+<div class="card" style="margin-left: 1rem">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-6">
+        <span class="search">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="search All"
+            style="height: 45px"
+            (keyup)="applyFilter($event)"
+          />
+          <!-- <button class="btn">
+              <i
+                class="text-dark font-medium-5"
+                style="margin-top: -1em"
+                data-feather="search"
+              ></i>
+            </button> -->
+        </span>
+      </div>
+      <div class="col-lg-2">
+        <!-- <select class="form-select">
+            <option selected>subject</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select> -->
+        <form [formGroup]="selectbox">
+          <mat-form-field appearance="fill">
+            <mat-label>subject</mat-label>
+            <mat-select formControlName="subject">
+              <mat-option value="Hindi">Hindi</mat-option>
+              <mat-option value="English">English</mat-option>
+              <mat-option value="Maths">Maths</mat-option>
+              <mat-option value="Science">Science</mat-option>
+            </mat-select>
+            <mat-error>Class is required </mat-error>
+          </mat-form-field>
+        </form>
+      </div>
+
+      <div class="col-lg-2">
+        <!-- <select class="form-select">
+            <option selected>class</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select> -->
+        <form [formGroup]="selectbox">
+          <mat-form-field appearance="fill">
+            <mat-label>class</mat-label>
+            <mat-select formControlName="subject">
+              <mat-option value="Hindi">Hindi</mat-option>
+              <mat-option value="English">English</mat-option>
+              <mat-option value="Maths">Maths</mat-option>
+              <mat-option value="Science">Science</mat-option>
+            </mat-select>
+            <mat-error>Class is required </mat-error>
+          </mat-form-field>
+        </form>
+      </div>
+
+      <div class="col-lg-2">
+        <span>
+          <a
+            (click)="navigateAddScanner()"
+            class="btn text-white"
+            style="background-color: #4b78bb"
+            >+ Add New Sheet</a
+          >
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="mat-elevation-z8 mt-4" style="overflow-x: auto">
+    <table mat-table [dataSource]="dataSource" style="width: 100%">
+      <!-- Progress Column -->
+      <ng-container matColumnDef="sheet_name">
+        <th
+          style="width: 15rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Folder Name
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <i class="fas fa-folder" style="color: #fff700"></i>
+          {{ row.sheet_name }}
+        </td>
+      </ng-container>
+      <!-- ID Column -->
+      <ng-container matColumnDef="exam_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Exam Name
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.exam_name }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="subject">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Subject
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.subject }}</td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="class">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Class
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.class_name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="year_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Academic Year
+        </th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.year_name }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="division">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Division
+        </th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.division_name }}
+        </td>
+      </ng-container>
+
+      <!-- <ng-container matColumnDef="exam_date">
+          <th
+            style="width: 10rem; min-width: 10rem"
+            mat-header-cell
+            *matHeaderCellDef
+          >
+            Exam Date
+          </th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.exam_date }}
+          </td>
+        </ng-container> -->
+
+      <ng-container matColumnDef="students">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Total Students
+        </th>
+        <td mat-cell *matCellDef="let row">55</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Action">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Action
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <!-- <i class="fas fa-trash"></i> -->
+          <!-- Button trigger modal -->
+          <button
+            (click)="openSendModal(row)"
+            type="button"
+            class="btn page-btn text-white border-0"
+          >
+            Send To Admin
+          </button>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModalLong"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLongTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="exampleModalLongTitle">
+                    Assign to Examiner
+                  </h3>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                    (click)="closeModal()"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div
+                  class="d-flex modal-body flex-column justify-content-center m-auto align-items-center"
+                  style="gap: 1rem"
+                >
+                  <div *ngFor="let list of examinerDataList; currentRow">
+                    <button
+                      (click)="sendFolder(list, currentRow)"
+                      class="btn page-btn text-white border-0"
+                      style="width: 150px"
+                    >
+                      {{ list.name }}
+                    </button>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                    (click)="closeModal()"
+                  >
+                    Close
+                  </button>
+                  <button
+                    (click)="closeModal()"
+                    type="button"
+                    class="btn btn-primary"
+                  >
+                    Save changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <mat-paginator
+    (page)="handlePageEvent($event)"
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    aria-label="Select page of users"
+  ></mat-paginator>
+
+  <!-- TABLE -->
+</div>
+
+<!-- Ends: table  -->
+
+<!-- Dashboard ends -->

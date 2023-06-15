@@ -1,0 +1,223 @@
+<ul
+  [ngClass]="{ dNone: sideNavStatus }"
+  class="navbar-nav bg-gradient-primary sidebar sidebar-dark sideResponsive"
+  id="accordionSidebar"
+>
+  <!-- Sidebar - Brand -->
+  <a
+    class="sidebar-brand d-flex align-items-center justify-content-center d-md-inline"
+  >
+    <div class="sidebar-brand-text mx-3">
+      <a (click)="redirectHome()">
+        <img
+          src="assets/images/vialogo.JPG"
+          width="110px"
+          style="position: relative; top: 12px"
+      /></a>
+    </div>
+  </a>
+  <div
+    class="text-right d-none d-md-inline"
+    style="margin-top: -11px; border-bottom: 1px solid #ddd"
+  >
+    <button
+      class="rounded-circle border-0"
+      id="sidebarToggle"
+      style="position: relative; top: -10px"
+    ></button>
+  </div>
+
+  <!--<div class="user-panel user-panel-hide">
+        <div class="pull-left image">
+            <img src="assets/images/default-profile-img.jpg"  class="img-circle" alt="User Image">
+            <img  src="assets/images/default-profile-img.jpg" class="img-circle" alt="User Image">
+            <p class="mb-1 text-white text-capitalize d-none-web text-center" style="font-weight: 600;">{{username | uppercase}}</p>
+            <i class="fa fa-circle text-success d-none new"></i>
+
+        </div>
+        <div class="pull-left info d-none-mobile">
+            <p class="mb-1 text-white text-capitalize">{{username}}</p>
+            <a class="text-white" style="font-size: 12px;"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+    </div>-->
+  <!-- Divider -->
+  <!-- Nav Item - Dashboard -->
+  <li *ngIf="role == '1'" class="nav-item techo" routerLinkActive="active">
+    <a class="nav-link slidebarClik" routerLink="dashboard">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Dashboard</span></a
+    >
+  </li>
+  <!-- Nav Item - Pages Collapse Menu -->
+  <li *ngIf="role == '1'" class="nav-item" routerLinkActive="active">
+    <a class="nav-link slidebarClik" routerLink="list-examiner">
+      <i class="fas fa-user"></i>
+      <span>Examiner</span></a
+    >
+  </li>
+
+  <li *ngIf="role == '1'" class="nav-item" routerLinkActive="active">
+    <a class="nav-link slidebarClik" routerLink="list-teacher">
+      <i class="fas fa-user-friends"></i>
+      <span>Teacher</span></a
+    >
+  </li>
+
+  <li *ngIf="role == '1'" class="nav-item">
+    <a class="nav-link slidebarClik" routerLink="list-student">
+      <i class="fas fa-users"></i>
+      <span>Student</span></a
+    >
+  </li>
+
+  <li *ngIf="role == '1'" class="nav-item">
+    <a class="nav-link slidebarClik" routerLink="list-scanner">
+      <i class="fas fa-user-check"></i>
+      <span>Scanner</span></a
+    >
+  </li>
+
+  <li *ngIf="role == '1'" class="nav-item">
+    <a class="nav-link slidebarClik" routerLink="list-institute">
+      <i class="fas fa-university"></i>
+      <span>Manage Institute</span></a
+    >
+  </li>
+
+  <!--Examiner Menu Start-->
+  <li *ngIf="role == '2'" class="nav-item" routerLinkActive="active">
+    <a class="nav-link slidebarClik" routerLink="app-examiner-dashboard">
+      <i class="fas fa-list-alt"></i>
+      <span>Dashboard</span></a
+    >
+  </li>
+
+  <li *ngIf="role == '2'" class="nav-item">
+    <a class="nav-link slidebarClik" routerLink="app-exam-management">
+      <i class="fas fa-stream"></i>
+      <span>Exam Management</span></a
+    >
+  </li>
+
+  <li *ngIf="role == '2'" class="nav-item">
+    <a class="nav-link slidebarClik" routerLink="app-answer-sheets">
+      <i class="fas fa-clipboard-check"></i>
+      <span>Answer Sheets</span></a
+    >
+  </li>
+
+  <li *ngIf="role == '2'" class="nav-item">
+    <a class="nav-link slidebarClik" routerLink="app-result-management">
+      <i class="fas fa-poll"></i>
+      <span>Result Management</span></a
+    >
+  </li>
+
+  <!--Teacher Menu Start-->
+  <li *ngIf="role == '3'" class="nav-item" routerLinkActive="active">
+    <a class="nav-link slidebarClik" routerLink="app-teacher-dashboard">
+      <i class="fas fa-list-alt"></i>
+      <span>Dashboard</span></a
+    >
+  </li>
+
+  <li *ngIf="role == '3'" class="nav-item">
+    <a class="nav-link slidebarClik" routerLink="app-teacher-ques-management">
+      <i class="fas fa-clipboard-check"></i>
+      <span>Que Paper Management</span></a
+    >
+  </li>
+
+  <li *ngIf="role == '3'" class="nav-item">
+    <a class="nav-link slidebarClik" routerLink="app-teacher-answer-sheets">
+      <i class="fas fa-poll"></i>
+      <span>Answer Sheets</span></a
+    >
+  </li>
+  <!--Student Menu Start-->
+  <li *ngIf="role == '4'" class="nav-item">
+    <a class="nav-link slidebarClik" routerLink="app-student-dashboard">
+      <i class="fas fa-list-alt"></i>
+      <span>Dashboard</span></a
+    >
+  </li>
+
+  <!--Scanner Menu Start-->
+  <li *ngIf="role == '5'" class="nav-item">
+    <a class="nav-link slidebarClik" routerLink="app-scanner-dashboard">
+      <i class="fas fa-list-alt"></i>
+      <span>Dashboard</span></a
+    >
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link slidebarClik" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Logout</span></a
+    >
+  </li>
+
+  <!--<li   class="nav-item" routerLinkActive="active">
+        <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-store"></i>
+            <span>Manage Data</span></a>
+        <div id="collapseTwo" class="collapse" routerLinkActive="show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="py-2 collapse-inner rounded">
+                <a class="collapse-item slidebarClik" routerLink="upload-lead-data" routerLinkActive="active">Upload Lead Data</a>
+                <a class="collapse-item slidebarClik" routerLink="manage-lead-data" routerLinkActive="active">Manage Lead Data</a>
+            </div>
+        </div>
+    </li>
+    <li  class="nav-item" routerLinkActive="active">
+        <a class="nav-link slidebarClik" routerLink="manage-tasks">
+            <i class="fas fa-fw fa-store"></i>
+            <span>Manage Tasks </span></a>
+    </li>
+    <li  class="nav-item" routerLinkActive="active">
+        <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Deals</span></a>
+        <div id="collapseFour" class="collapse" routerLinkActive="show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="py-2 collapse-inner rounded">
+                <a class="collapse-item slidebarClik" routerLink="won-deal" routerLinkActive="active">Won Deal</a>
+                <a class="collapse-item slidebarClik" routerLink="unqualified-lost-deal" routerLinkActive="active">Unqualified / Lost Deal</a>
+            </div>
+        </div>
+    </li>
+
+    <li  class="nav-item" routerLinkActive="active">
+        <a class="nav-link slidebarClik" routerLink="manage-agent">
+            <i class="fas fa-users" aria-hidden="true"></i>
+            <span>Manage Agent </span></a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            <i class="fas fa-fw fa fa-cog" aria-hidden="true"></i>
+            <span>Configuration</span></a>
+        <div id="collapseThree" class="collapse" routerLinkActive="show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="py-2 collapse-inner rounded">
+                <a class="collapse-item slidebarClik" routerLink="business-type" routerLinkActive="active">Business Type</a>
+                <a class="collapse-item slidebarClik" routerLink="lifeCycle-stage" routerLinkActive="active">Life Cycle Stage</a>
+                <a class="collapse-item slidebarClik" routerLink="lead-source" routerLinkActive="active">Lead Source</a>
+                <a class="collapse-item slidebarClik" routerLink="call-status" routerLinkActive="active">Call Status</a>
+            </div>
+        </div>
+    </li>
+
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <li  class="nav-item" routerLinkActive="active">
+        <a class="nav-link slidebarClik" routerLink="archive-trash">
+            <i class="fas fa-fw fa-trash-alt" aria-hidden="true"></i>
+            <span>Archive / Trash</span></a>
+    </li>
+
+    <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link slidebarClik" (click)="openDialog()">
+            <i class="fas fa-fw fa-sign-out-alt" aria-hidden="true"></i>
+            <span>Log Out</span>
+        </a>
+    </li>-->
+  <!-- Divider -->
+  <!-- Sidebar Toggler (Sidebar) -->
+</ul>

@@ -1,0 +1,29 @@
+.chevron-left {
+  margin-top: 2.2rem;
+}
+.chevron-right {
+  margin-top: 2.2rem;
+}
+
+.left-number button {
+  padding: 5px 20px 5px 20px;
+  margin-bottom: 10px;
+}
+
+.marks button {
+  margin-bottom: 10px;
+}
+/* Chrome, Safari, Edge, Opera */
+::ng-deep input::-webkit-outer-spin-button,
+::ng-deep input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+::ng-deep input[type="number"] {
+  -moz-appearance: textfield;
+}
+.col-lg-1 {
+  max-width: 6.66% !important;
+}

@@ -1,0 +1,371 @@
+<!-- BEGIN: Content-->
+
+<div class="app-content content" style="margin-left: 0">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper container-xxl p-0">
+    <div class="content-header row"></div>
+    <div class="content-body">
+      <!-- BODY CONTENT -->
+      <!-- CHARTS ROW -->
+
+      <div class="row" style="gap: 2rem; margin-top: 1px; margin-left: 1rem">
+        <div class="col-sm bg-white shadow p-3">
+          <div id="chartContainer1" style="height: 20rem; width: 100%"></div>
+        </div>
+        <div class="col-sm bg-white shadow p-3">
+          <!-- Begin: Pie Charts -->
+          <div id="chartContainer" style="height: 20rem; width: 100%"></div>
+
+          <!-- End: Pie Charts -->
+        </div>
+      </div>
+      <!-- CHARTS ROW -->
+
+      <div
+        class="container bg-white shadow mt-5"
+        style="max-width: 100%; max-height: 100vh; margin-left: 1rem"
+      >
+        <!-- SEARCH AND ADD -->
+        <div class="row align-items-center p-3 pb-0" style="gap: 1rem">
+          <div class="col">
+            <!-- <mat-form-field
+              style="
+                width: 80% !important;
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+              "
+              appearance="standard"
+            >
+              <mat-label>Search All</mat-label>
+              <input matInput placeholder="Ex. Pankaj" />
+            </mat-form-field> -->
+          </div>
+          <div class="col">
+            <form>
+              <div
+                class="d-flex float-end align-items-center flex-wrap"
+                style="gap: 1rem"
+              >
+                <div>
+                  <!-- <select
+                  style="padding: 0.5rem; border-radius: 4px"
+                  name="subject"
+                  id="sub"
+                >
+                  <option value="subject">Subject</option>
+                  <option value="subject">English</option>
+                  <option value="subject">Maths</option>
+                  <option value="subject">Science</option>
+                </select> -->
+
+                  <!-- <mat-form-field appearance="fill">
+                  <mat-label>subject</mat-label>
+                  <mat-select formControlName="subject">
+                    <mat-option value="Hindi">Hindi</mat-option>
+                    <mat-option value="English">English</mat-option>
+                    <mat-option value="Maths">Maths</mat-option>
+                    <mat-option value="Science">Science</mat-option>
+                  </mat-select>
+                  <mat-error>Class is required </mat-error>
+                </mat-form-field> -->
+                </div>
+                <div>
+                  <select
+                    style="padding: 0.5rem; border-radius: 4px"
+                    name="class"
+                    id="class"
+                  >
+                    <option value="class">Class</option>
+                    <option value="class">C.S.E</option>
+                    <option value="class">Maths</option>
+                    <option value="class">Science</option>
+                  </select>
+                  <span>
+                    <!-- <mat-form-field appearance="fill">
+                      <mat-label>class</mat-label>
+                      <mat-select formControlName="class">
+                        <mat-option value="C.S.E">C.S.E</mat-option>
+                        <mat-option value="Maths">Maths</mat-option>
+                        <mat-option value="Science">Science</mat-option>
+                      </mat-select>
+                      <mat-error>Class is required </mat-error>
+                    </mat-form-field> -->
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!--  -->
+
+        <!-- SEARCH AND ADD -->
+        <!-- TABLE -->
+        <div
+          class="table-responsive"
+          style="overflow-y: auto !important; height: 70vh !important"
+        >
+          <table class="datatable table mt-3">
+            <thead>
+              <tr style="background: #f3f2f7 !important">
+                <th scope="col">Exam Name</th>
+                <th scope="col">Exam Date</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Total Marks</th>
+                <th scope="col">Marks</th>
+                <th scope="col">Class-Division</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">View</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <!-- Exam Name -->
+                <th scope="row">Final Exam</th>
+                <!-- Exam Date -->
+                <td>25/08/2022</td>
+                <!-- subject -->
+                <td>Painting</td>
+                <!-- Total Marks -->
+                <td>100</td>
+                <!-- Marks -->
+                <td>59</td>
+                <!-- Class-Div -->
+                <td>Class XII - Div C</td>
+                <!-- Due Date -->
+                <td>28/12/2022</td>
+
+                <!-- View -->
+                <td>
+                  <button (click)="navigateToEvalAns()" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <!-- Exam Name -->
+                <th scope="row">Mid Term Exam</th>
+                <!-- Exam Date -->
+                <td>25/08/2022</td>
+                <!-- subject -->
+                <td>Painting</td>
+                <!-- Total Marks -->
+                <td>100</td>
+                <!-- Marks -->
+                <td>59</td>
+                <!-- Class-Div -->
+                <td>Class XII - Div C</td>
+                <!-- Due Date -->
+                <td>28/12/2022</td>
+
+                <!-- View -->
+                <td>
+                  <button (click)="navigateToEvalAns()" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <!-- Exam Name -->
+                <th scope="row">Final Exam</th>
+                <!-- Exam Date -->
+                <td>25/08/2022</td>
+                <!-- subject -->
+                <td>Painting</td>
+                <!-- Total Marks -->
+                <td>100</td>
+                <!-- Marks -->
+                <td>59</td>
+                <!-- Class-Div -->
+                <td>Class XII - Div C</td>
+                <!-- Due Date -->
+                <td>28/12/2022</td>
+
+                <!-- View -->
+                <td>
+                  <button (click)="navigateToEvalAns()" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <!-- Exam Name -->
+                <th scope="row">Mid Term Exam</th>
+                <!-- Exam Date -->
+                <td>25/08/2022</td>
+                <!-- subject -->
+                <td>Painting</td>
+                <!-- Total Marks -->
+                <td>100</td>
+                <!-- Marks -->
+                <td>59</td>
+                <!-- Class-Div -->
+                <td>Class XII - Div C</td>
+                <!-- Due Date -->
+                <td>28/12/2022</td>
+
+                <!-- View -->
+                <td>
+                  <button (click)="navigateToEvalAns()" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <!-- Exam Name -->
+                <th scope="row">Final Exam</th>
+                <!-- Exam Date -->
+                <td>25/08/2022</td>
+                <!-- subject -->
+                <td>Painting</td>
+                <!-- Total Marks -->
+                <td>100</td>
+                <!-- Marks -->
+                <td>59</td>
+                <!-- Class-Div -->
+                <td>Class XII - Div C</td>
+                <!-- Due Date -->
+                <td>28/12/2022</td>
+
+                <!-- View -->
+                <td>
+                  <button (click)="navigateToEvalAns()" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <!-- Exam Name -->
+                <th scope="row">Final Exam</th>
+                <!-- Exam Date -->
+                <td>25/08/2022</td>
+                <!-- subject -->
+                <td>Painting</td>
+                <!-- Total Marks -->
+                <td>100</td>
+                <!-- Marks -->
+                <td>59</td>
+                <!-- Class-Div -->
+                <td>Class XII - Div C</td>
+                <!-- Due Date -->
+                <td>28/12/2022</td>
+
+                <!-- View -->
+                <td>
+                  <button (click)="navigateToEvalAns()" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <!-- Exam Name -->
+                <th scope="row">Final Exam</th>
+                <!-- Exam Date -->
+                <td>25/08/2022</td>
+                <!-- subject -->
+                <td>Painting</td>
+                <!-- Total Marks -->
+                <td>100</td>
+                <!-- Marks -->
+                <td>59</td>
+                <!-- Class-Div -->
+                <td>Class XII - Div C</td>
+                <!-- Due Date -->
+                <td>28/12/2022</td>
+
+                <!-- View -->
+                <td>
+                  <button (click)="navigateToEvalAns()" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <!-- Exam Name -->
+                <th scope="row">Final Exam</th>
+                <!-- Exam Date -->
+                <td>25/08/2022</td>
+                <!-- subject -->
+                <td>Painting</td>
+                <!-- Total Marks -->
+                <td>100</td>
+                <!-- Marks -->
+                <td>59</td>
+                <!-- Class-Div -->
+                <td>Class XII - Div C</td>
+                <!-- Due Date -->
+                <td>28/12/2022</td>
+
+                <!-- View -->
+                <td>
+                  <button (click)="navigateToEvalAns()" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <!-- Exam Name -->
+                <th scope="row">Final Exam</th>
+                <!-- Exam Date -->
+                <td>25/08/2022</td>
+                <!-- subject -->
+                <td>Painting</td>
+                <!-- Total Marks -->
+                <td>100</td>
+                <!-- Marks -->
+                <td>59</td>
+                <!-- Class-Div -->
+                <td>Class XII - Div C</td>
+                <!-- Due Date -->
+                <td>28/12/2022</td>
+
+                <!-- View -->
+                <td>
+                  <button (click)="navigateToEvalAns()" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <!-- Exam Name -->
+                <th scope="row">Final Exam</th>
+                <!-- Exam Date -->
+                <td>25/08/2022</td>
+                <!-- subject -->
+                <td>Painting</td>
+                <!-- Total Marks -->
+                <td>100</td>
+                <!-- Marks -->
+                <td>59</td>
+                <!-- Class-Div -->
+                <td>Class XII - Div C</td>
+                <!-- Due Date -->
+                <td>28/12/2022</td>
+
+                <!-- View -->
+                <td>
+                  <button (click)="navigateToEvalAns()" class="btn btn-primary">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- TABLE -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END: Content-->

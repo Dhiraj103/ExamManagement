@@ -1,0 +1,46 @@
+@media screen and (max-width: 769px) {
+  /* .sideResponsive {
+    display: none;
+  } */
+
+  .sidebar {
+    width: 6rem !important;
+  }
+  .nav-item span {
+    display: none !important;
+  }
+  .sidebar-brand-text img {
+    top: 21px !important;
+  }
+  .techo {
+    margin-top: 3rem !important;
+  }
+  #accordionSidebar i.fas {
+    /* color: rgba(255, 255, 255, 1); */
+    color: #000;
+    margin-right: 0 !important;
+  }
+
+  .sidebar .nav-item.active .nav-link .fas {
+    color: #fff !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* .sideResponsive {
+    display: block;
+  } */
+}
+
+.dNone {
+  display: none;
+}
+
+.far {
+  color: #000 !important;
+}
+
+.slidebarClik {
+  display: flex !important;
+  align-items: center !important;
+}

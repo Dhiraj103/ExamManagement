@@ -1,0 +1,222 @@
+<!-- BEGIN: Content-->
+
+<!-- Dashboard  Starts -->
+<div class="container-fluid bg-white" style="margin-left: 1rem">
+  <!-- Begin: Pie Charts -->
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <div id="chartContainer1" style="height: 280px; width: 100%"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <canvas id="myCharts" style="width: 100%"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- End: Pie Charts -->
+
+  <!-- Begin: table  -->
+
+  <div class="bg-white">
+    <div class="row">
+      <div class="col-lg-4 mt-3">
+        <span class="search">
+          <input
+            type="text"
+            (keyup)="applyFilter($event)"
+            class="form-control p-1"
+            placeholder="search ..."
+            style="height: 45px"
+          />
+        </span>
+      </div>
+
+      <div class="col-lg-7 mt-3" style="margin-right: 1rem">
+        <div
+          style="
+            float: right;
+            float: right;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+          "
+        >
+          <span style="display: flex; gap: 1rem">
+            <button
+              href=""
+              class="btn text-white"
+              style="background-color: #4b78bb"
+            >
+              Schedule
+            </button>
+            <button
+              href=""
+              class="btn"
+              style="
+                color: #4b78bb;
+                background-color: #fff;
+                border: 2px solid #4b78bb; ;
+              "
+            >
+              pending
+            </button>
+            <button
+              href=""
+              class="btn"
+              style="
+                color: #4b78bb;
+                background-color: #fff;
+                border: 2px solid #4b78bb; ;
+              "
+            >
+              Completed
+            </button>
+          </span>
+          <span>
+            <i class="text-dark font-medium-5 fas fa-arrow-up"></i>
+            <i class="text-dark font-medium-5 fas fa-arrow-down"></i>
+          </span>
+
+          <span>
+            <i class="text-dark font-medium-5 fas fa-filter"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="mat-elevation-z8 mt-4 pl-0" style="overflow-x: auto">
+        <table mat-table [dataSource]="dataSource" style="width: 100%">
+          <!-- ID Column -->
+          <ng-container matColumnDef="exam_name">
+            <th
+              style="width: 10rem; min-width: 10rem"
+              mat-header-cell
+              *matHeaderCellDef
+            >
+              Exam Name
+            </th>
+            <td mat-cell *matCellDef="let row">{{ row.exam_name }}</td>
+          </ng-container>
+
+          <!-- Progress Column -->
+          <ng-container matColumnDef="class_name">
+            <th
+              style="width: 10rem; min-width: 10rem"
+              mat-header-cell
+              *matHeaderCellDef
+            >
+              Class
+            </th>
+            <td mat-cell *matCellDef="let row">{{ row.class_name }}</td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="division_name">
+            <th
+              style="width: 10rem; min-width: 10rem"
+              mat-header-cell
+              *matHeaderCellDef
+            >
+              Division
+            </th>
+            <td mat-cell *matCellDef="let row">{{ row.division_name }}</td>
+          </ng-container>
+
+          <!-- Fruit Column -->
+          <ng-container matColumnDef="subject_name">
+            <th
+              style="width: 10rem; min-width: 10rem"
+              mat-header-cell
+              *matHeaderCellDef
+            >
+              Subject
+            </th>
+            <td mat-cell *matCellDef="let row">{{ row.subject_name }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="year_name">
+            <th
+              style="width: 10rem; min-width: 10rem"
+              mat-header-cell
+              *matHeaderCellDef
+            >
+              Year
+            </th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.year_name }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="semester_name">
+            <th
+              style="width: 10rem; min-width: 10rem"
+              mat-header-cell
+              *matHeaderCellDef
+            >
+              Semester
+            </th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.semester_name }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="exam_date">
+            <th
+              style="width: 10rem; min-width: 10rem"
+              mat-header-cell
+              *matHeaderCellDef
+            >
+              Exam Date
+            </th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.exam_date }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Action">
+            <th
+              style="width: 10rem; min-width: 10rem"
+              mat-header-cell
+              *matHeaderCellDef
+            >
+              Action
+            </th>
+            <td mat-cell *matCellDef="let row">
+              <a class="d-flex align-items-center gap-3">
+                <button
+                  (click)="_addQue(row.exam_details_id, row.create_exam_id)"
+                  class="btn btn-primary"
+                >
+                  Add que. Paper
+                </button>
+              </a>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+      <mat-paginator
+        (page)="handlePageEvent($event)"
+        [length]="length"
+        [pageSize]="pageSize"
+        [pageIndex]="pageIndex"
+        aria-label="Select page of users"
+      ></mat-paginator>
+    </div>
+  </div>
+</div>
+<!-- Ends: table  -->
+
+<!-- Dashboard ends -->
+
+<!-- END: Content-->

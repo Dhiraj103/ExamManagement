@@ -1,0 +1,230 @@
+<!-- BEGIN: Content-->
+<div class="container-fluid bg-white" style="margin-left: 1rem">
+  <div class="row p-1 mt-2">
+    <div class="col-4 mt-4">
+      <span class="search">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="search All"
+          style="height: 45px"
+          (keyup)="applyFilter($event)"
+        />
+        <button class="btn">
+          <i
+            class="text-dark font-medium-5"
+            style="margin-top: -1em"
+            data-feather="search"
+          ></i>
+        </button>
+      </span>
+    </div>
+    <div class="col-2"></div>
+
+    <div class="col-3 mt-4">
+      <select class="form-select">
+        <option selected>subject</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="col-2 mt-4">
+      <select class="form-select">
+        <option selected>class</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="col-1">
+      <i
+        class="glyphicon glyphicon-tasks font-medium-3"
+        style="margin-top: 10px; padding-left: 20px"
+      ></i>
+    </div>
+  </div>
+  <!-- Begin: table -->
+  <div class="mat-elevation-z8 mt-4" style="overflow-x: auto">
+    <table mat-table [dataSource]="dataSource" style="width: 100%">
+      <!-- ID Column -->
+      <ng-container matColumnDef="FolderName">
+        <th
+          style="width: 15rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Folder Name
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <div>
+            <i class="fas fa-folder" style="color: #fff700"></i>
+            {{ row.sheet_name }}
+          </div>
+          <!-- <div *ngFor="let row of collection.children">{{ row.exam_name }}</div> -->
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="subject_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Subject
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.subject }}</td>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="class_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Class
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.class_name }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="division_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Division
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.division_name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="exam_date">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Year Name
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.year_name }}</td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+
+      <ng-container matColumnDef="totalStudents">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Total Students
+        </th>
+        <td mat-cell *matCellDef="let row">53</td>
+      </ng-container>
+
+      <ng-container matColumnDef="UploadedBy">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Uploaded By
+        </th>
+        <td mat-cell *matCellDef="let row">Jayesh Goyal</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Action">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Action
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <a class="d-flex align-items-center gap-3">
+            <button (click)="navigateEvalOne(row)" class="btn btn-primary">
+              <i class="fas fa-eye"></i>
+            </button>
+            <!-- <i
+                      (click)="_editExam(row.exam_details_id)"
+                      class="fas fa-pencil-alt"
+                    ></i> -->
+            <!-- <i class="fas fa-trash"></i> -->
+            <!-- Button trigger modal -->
+            <!-- <button
+                      (click)="openDeleteExamModal(row)"
+                      class="fas fa-trash border-0"
+                      style="background: transparent"
+                    ></button> -->
+
+            <!-- Modal -->
+            <!-- <div
+                      class="modal fade"
+                      id="exampleModal"
+                      tabindex="-1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">
+                              Delete Exam?
+                            </h5>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body">
+                            <span class="fw-bold">Exam Name :</span>
+                            {{ examName }}
+                            <span class="fw-bold">Exam Date :</span>
+                            {{ examDate }}
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-secondary"
+                              data-bs-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                            <button
+                              (click)="deleteSelectedExam()"
+                              type="button"
+                              data-bs-dismiss="modal"
+                              class="btn btn-primary"
+                            >
+                              Yes
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+            <!-- Modal -->
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+
+  <mat-paginator
+    (page)="handlePageEvent($event)"
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    aria-label="Select page of users"
+  ></mat-paginator>
+</div>
+<!-- End: table -->
+
+<!-- END: Content-->

@@ -1,0 +1,208 @@
+<!-- BODY CONTENT -->
+<div class="container-fluid ml-3" style="background: #fff">
+  <!-- SEARCH AND ADD -->
+  <div class="row" style="background: #fff; margin: 1px; padding-top: 2%">
+    <div class="col-lg-4 col-xs-6 mmb-2">
+      <input
+        class="form-control"
+        placeholder="search All"
+        style="height: 45px"
+        (keyup)="applyFilter($event)"
+      />
+    </div>
+    <div class="col-lg-8 col-xs-6 mmb-2">
+      <a
+        (click)="navigateToExaminerForm()"
+        class="btn btn-primary"
+        style="margin-top: 1%; margin-right: 3%; float: right; color: #fff"
+        >+ Add Exam</a
+      >
+    </div>
+  </div>
+
+  <!-- SEARCH AND ADD -->
+
+  <!-- TABLE -->
+  <div class="mat-elevation-z8 mt-4" style="overflow-x: auto">
+    <table mat-table [dataSource]="dataSource" style="width: 100%">
+      <!-- ID Column -->
+      <ng-container matColumnDef="exam_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Exam Name
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.exam_name }}</td>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="class_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Class
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.class_name }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="division_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Division
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.division_name }}</td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="subject_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Subject
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.subject_name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="year_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Year
+        </th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.year_name }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="semester_name">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Semester
+        </th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.semester_name }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="exam_date">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Exam Date
+        </th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.exam_date }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Action">
+        <th
+          style="width: 10rem; min-width: 10rem"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Action
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <a class="d-flex align-items-center gap-3">
+            <i
+              (click)="_editExam(row.exam_details_id)"
+              class="fas fa-pencil-alt"
+            ></i>
+            <!-- <i class="fas fa-trash"></i> -->
+            <!-- Button trigger modal -->
+            <button
+              (click)="openDeleteExamModal(row)"
+              class="fas fa-trash border-0"
+              style="background: transparent"
+            ></button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Delete Exam?
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <span class="fw-bold">Exam Name :</span>
+                    {{ examName }}
+                    <span class="fw-bold">Exam Date :</span> {{ examDate }}
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      (click)="deleteSelectedExam()"
+                      type="button"
+                      data-bs-dismiss="modal"
+                      class="btn btn-primary"
+                    >
+                      Yes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal -->
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+
+  <mat-paginator
+    (page)="handlePageEvent($event)"
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    aria-label="Select page of users"
+  ></mat-paginator>
+
+  <!-- TABLE -->
+</div>
+
+<!-- BODY CONTENT -->
+
+<!-- BEGIN: Footer-->
+
+<!-- END: Footer-->

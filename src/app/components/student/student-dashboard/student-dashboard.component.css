@@ -1,0 +1,27 @@
+.curspoint ul {
+  cursor: pointer !important;
+}
+.btn {
+  color: #4b78bb !important;
+  border-color: #4b78bb !important;
+  line-height: 0.7 !important;
+  padding: 0.786rem 2rem !important;
+}
+
+.btn-primary:hover:not(.disabled):not(:disabled) {
+  box-shadow: 0 8px 25px -8px #4b78bb !important;
+}
+.btn-primary {
+  background: #4b78bb !important;
+  color: white !important;
+}
+
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #fff;
+  background-color: #4b78bb !important;
+}
+input {
+  outline: none !important;
+}

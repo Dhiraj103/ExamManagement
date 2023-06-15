@@ -1,0 +1,7 @@
+::ng-deep .mat-form-field-should-float .mat-form-field-label-wrapper {
+  display: none !important;
+}
+::ng-deep .mat-focused .al-subscribe-form-placeholder,
+::ng-deep .mat-form-field-invalid .al-subscribe-form-placeholder {
+  display: none !important;
+}

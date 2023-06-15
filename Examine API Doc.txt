@@ -1,0 +1,1241 @@
+Master section = Student
+-----------------------For Add Student data---------------------
+URL-http://exam.ezii.live/api/add_student
+Method-POST
+REquest - 
+uid_number:1
+name:Mayur
+email:MAyur@m.in
+password:123
+date_of_birth:22/2/1990
+aadhar_number:111111111111
+mobile:2111111111
+address:pune
+role:4
+scanner_mid:12
+institute_id:12
+division_id:1
+class_id:1
+academic_id:1
+image:
+
+Response -
+{
+    "success": true,
+    "data": "Student data was generated."
+}
+-----------------------For Update Student data---------------------
+URL-http://exam.ezii.live/api/update_student
+Method-POST
+REquest - 
+id:1
+uid_number:1
+name:Mayur
+email:Mayur@m.inn
+password:123
+date_of_birth:2/12/1990
+aadhar_number:111111111110
+mobile:2111111112
+address:pune
+role:4
+scanner_mid:12
+institute_id:12
+division_id:1
+class_id:1
+academic_id:2
+image:
+
+
+Response -
+{
+    "success": true,
+    "data": "Student data has been successfully changed."
+}
+-----------------------For Class List API-----------------------
+URL - http://exam.ezii.live/api/class_list
+Method - POST 
+
+Response - 
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "class_name": "1st Class"
+        },
+        {
+            "id": 2,
+            "class_name": "2nd Class"
+        },
+        {
+            "id": 3,
+            "class_name": "3rd Class"
+        },
+        {
+            "id": 4,
+            "class_name": "4th Class"
+        },
+        {
+            "id": 5,
+            "class_name": "5th Class"
+        },
+        {
+            "id": 6,
+            "class_name": "6th Class"
+        },
+        {
+            "id": 7,
+            "class_name": "7th Class"
+        },
+        {
+            "id": 8,
+            "class_name": "8th Class"
+        },
+        {
+            "id": 9,
+            "class_name": "9th Class"
+        },
+        {
+            "id": 10,
+            "class_name": "10th Class"
+        },
+        {
+            "id": 11,
+            "class_name": "11th Class"
+        },
+        {
+            "id": 12,
+            "class_name": "12th Class"
+        }
+    ]
+}
+-----------------------For Academic year List API-----------------------
+URL - http://exam.ezii.live/api/academic_year_list
+Method - POST 
+Response -
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "year_name": "2021-2022"
+        },
+        {
+            "id": 2,
+            "year_name": "2022-2023"
+        },
+        {
+            "id": 3,
+            "year_name": "2023-2024"
+        },
+        {
+            "id": 4,
+            "year_name": "2024-2025"
+        },
+        {
+            "id": 5,
+            "year_name": "2025-2026"
+        },
+        {
+            "id": 6,
+            "year_name": "2026-2027"
+        },
+        {
+            "id": 7,
+            "year_name": "2027-2028"
+        },
+        {
+            "id": 8,
+            "year_name": "2028-2029"
+        },
+        {
+            "id": 9,
+            "year_name": "2029-2030"
+        },
+        {
+            "id": 10,
+            "year_name": "2030-2031"
+        },
+        {
+            "id": 11,
+            "year_name": "2031-2032"
+        },
+        {
+            "id": 12,
+            "year_name": "2032-2033"
+        },
+        {
+            "id": 13,
+            "year_name": "2033-2034"
+        },
+        {
+            "id": 14,
+            "year_name": "2034-2035"
+        },
+        {
+            "id": 15,
+            "year_name": "2035-2036"
+        },
+        {
+            "id": 16,
+            "year_name": "2036-2037"
+        },
+        {
+            "id": 17,
+            "year_name": "2037-2038"
+        },
+        {
+            "id": 18,
+            "year_name": "2038-2039"
+        },
+        {
+            "id": 19,
+            "year_name": "2039-2040"
+        },
+        {
+            "id": 20,
+            "year_name": "2040-2041"
+        },
+        {
+            "id": 21,
+            "year_name": "2041-2042"
+        },
+        {
+            "id": 22,
+            "year_name": "2042-2043"
+        },
+        {
+            "id": 23,
+            "year_name": "2043-2044"
+        },
+        {
+            "id": 24,
+            "year_name": "2044-2045"
+        },
+        {
+            "id": 25,
+            "year_name": "2045-2046"
+        },
+        {
+            "id": 26,
+            "year_name": "2046-2047"
+        },
+        {
+            "id": 27,
+            "year_name": "2047-2048"
+        },
+        {
+            "id": 28,
+            "year_name": "2048-2049"
+        },
+        {
+            "id": 29,
+            "year_name": "2049-2050"
+        }
+    ]
+}
+-----------------------For Semester list API-----------------------
+URL - http://exam.ezii.live/api/semester_list
+Method - POST 
+Response -
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "semester_name": "1st semester"
+        },
+        {
+            "id": 2,
+            "semester_name": "2nd semester"
+        },
+        {
+            "id": 3,
+            "semester_name": "3rd semester"
+        },
+        {
+            "id": 4,
+            "semester_name": "4th semester"
+        },
+        {
+            "id": 5,
+            "semester_name": "5th semester"
+        },
+        {
+            "id": 6,
+            "semester_name": "6th semester"
+        },
+        {
+            "id": 7,
+            "semester_name": "7th semester"
+        },
+        {
+            "id": 8,
+            "semester_name": "8th semester"
+        }
+    ]
+}
+-----------------------For Division list API-----------------------
+URL - http://exam.ezii.live/api/division_list
+Method - POST 
+Response -
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "division_name": "A"
+        },
+        {
+            "id": 2,
+            "division_name": "B"
+        },
+        {
+            "id": 3,
+            "division_name": "C"
+        },
+        {
+            "id": 4,
+            "division_name": "D"
+        },
+        {
+            "id": 5,
+            "division_name": "E"
+        },
+        {
+            "id": 6,
+            "division_name": "F"
+        }
+    ]
+}
+-----------------------For Create Exam data API-----------------------
+URL- http://exam.ezii.live/api/add_exam
+Method - POST
+Request -
+exam_name:final
+class_id:1
+division_id:1
+academic_year_id:1
+semister_id:1
+exam_start_date:2021-12-28
+exam_end_date:2022-01-28
+role_id:
+subject_list:[
+{"subject_name":"Marathi","total_mark":750,"pass_mark":350,"exam_date":"2020-12-28","select_question_paper_id":1,"select_answer_paper_id":1,"exam_time":"9:00 AM"},
+{"subject_name":"Hindi","total_mark":750,"pass_mark":350,"exam_date":"2021-12-29","select_question_paper_id":1,"select_answer_paper_id":1,"exam_time":"9:00 AM"},
+{"subject_name":"English","total_mark":750,"pass_mark":350,"exam_date":"2021-12-29","select_question_paper_id":1,"select_answer_paper_id":1,"exam_time":"12:30 PM"},
+{"subject_name":"History","total_mark":750,"pass_mark":350,"exam_date":"2021-12-29","select_question_paper_id":1,"select_answer_paper_id":1,"exam_time":"4:30 PM"}]
+
+Response -
+{
+    "success": true,
+    "data": "Exam data was generated."
+}
+
+-----------------------For Question paper List API-----------------------
+URL - http://exam.ezii.live/api/question_paper_list
+Method - POST 
+
+Response -
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "question_paper_name": "Questionpaper1"
+        },
+        {
+            "id": 2,
+            "question_paper_name": "Questionpaper2"
+        },
+        {
+            "id": 3,
+            "question_paper_name": "Questionpaper3"
+        },
+        {
+            "id": 4,
+            "question_paper_name": "Questionpaper4"
+        },
+        {
+            "id": 5,
+            "question_paper_name": "Questionpaper5"
+        },
+        {
+            "id": 6,
+            "question_paper_name": "Questionpaper6"
+        }
+    ]
+}
+
+-----------------------For Answer paper List API-----------------------
+URL - http://exam.ezii.live/api/answer_paper_list
+Method - POST 
+
+Response -
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "answer_paper_name": "AnswerSheet1"
+        },
+        {
+            "id": 2,
+            "answer_paper_name": "AnswerSheet2"
+        },
+        {
+            "id": 3,
+            "answer_paper_name": "AnswerSheet3"
+        },
+        {
+            "id": 4,
+            "answer_paper_name": "AnswerSheet4"
+        },
+        {
+            "id": 5,
+            "answer_paper_name": "AnswerSheet5"
+        },
+        {
+            "id": 6,
+            "answer_paper_name": "AnswerSheet6"
+        }
+    ]
+}
+
+-----------------------For Exam Details List API-----------------------
+URL - http://exam.ezii.live/api/exam_details
+Method - POST 
+Response -
+{
+    "success": true,
+    "data": [
+        {
+            "exam_details_id": 68,
+            "exam_name": "ZZ",
+            "class_name": "3rd Class",
+            "class_id": 3,
+            "division_name": "C",
+            "division_id": 3,
+            "year_name": "2022-2023",
+            "academic_year_id": 2,
+            "semester_name": "3rd semester",
+            "semister_id": 3,
+            "exam_start_date": "2023-02-15",
+            "exam_end_date": "2023-02-20",
+            "create_exam_id": 65,
+            "subject_name": "ZZ",
+            "total_mark": 32,
+            "pass_mark": 323,
+            "exam_date": "0323-01-01",
+            "question_paper_name": "Questionpaper6",
+            "select_question_paper_id": 6,
+            "answer_paper_name": "AnswerSheet4",
+            "select_answer_paper_id": 4,
+            "exam_time": "32323"
+        },
+        {
+            "exam_details_id": 67,
+            "exam_name": "YY",
+            "class_name": "3rd Class",
+            "class_id": 3,
+            "division_name": "C",
+            "division_id": 3,
+            "year_name": "2022-2023",
+            "academic_year_id": 2,
+            "semester_name": "3rd semester",
+            "semister_id": 3,
+            "exam_start_date": "2023-02-15",
+            "exam_end_date": "2023-02-20",
+            "create_exam_id": 64,
+            "subject_name": "YY",
+            "total_mark": 32,
+            "pass_mark": 323,
+            "exam_date": "0323-01-01",
+            "question_paper_name": "Questionpaper6",
+            "select_question_paper_id": 6,
+            "answer_paper_name": "AnswerSheet4",
+            "select_answer_paper_id": 4,
+            "exam_time": "32323"
+        },
+    ]
+}
+
+-----------------------For fetch create_exam_id for edit API-----------------------
+URL - http://exam.ezii.live/api/get_create_exam_id
+Method - POST 
+
+Request - 
+exam_details_id:13
+
+Response - 
+
+{
+    "success": true,
+    "data": [
+        {
+            "create_exam_id": 8
+        }
+    ]
+}
+
+-----------------------For update exam data API-----------------------
+URL - http://exam.ezii.live/api/update_exam_data
+Method - POST 
+
+Request - 
+exam_details_id:13
+exam_name:semi
+class_id:9
+division_id:5
+subject_name:maths
+academic_year_id:2
+semister_id:2
+exam_date:15-05-2020
+exam_start_date:15-05-2020
+exam_end_date:15-06-2020
+total_mark:100
+pass_mark:35
+select_question_paper_id:1
+select_answer_paper_id:1
+exam_time:1:00 PM
+
+Response - 
+
+{
+    "success": true,
+    "data": "Exam data was updated successfully."
+}
+
+
+-----------------------For delete exam data API-----------------------
+URL - http://exam.ezii.live/api/delete_exam_data
+Method - POST 
+
+Request - 
+exam_details_id:12
+
+Response - 
+
+{
+    "success": true,
+    "data": "Exam data was deleted successfully."
+}
+
+-----------------------For fetch edit exam data API-----------------------
+URL - http://exam.ezii.live/api/fetch_edit_exam_data
+Method - POST 
+
+Request - 
+create_exam_id:41
+exam_details_id:44
+
+Response - 
+
+{
+    "success": true,
+    "data": [
+        {
+            "exam_details_id": 44,
+            "exam_name": "dd",
+            "class_name": "3rd Class",
+            "class_id": 3,
+            "division_name": "C",
+            "division_id": 3,
+            "year_name": "2022-2023",
+            "academic_year_id": 2,
+            "semester_name": "3rd semester",
+            "semister_id": 3,
+            "exam_start_date": "2023-02-15",
+            "exam_end_date": "2023-02-20",
+            "create_exam_id": 41,
+            "subject_name": "ddawd ",
+            "total_mark": 32,
+            "pass_mark": 323,
+            "exam_date": "0323-01-01",
+            "question_paper_name": "Questionpaper6",
+            "select_question_paper_id": 6,
+            "answer_paper_name": "AnswerSheet4",
+            "select_answer_paper_id": 4,
+            "exam_time": "32323"
+        }
+    ]
+}
+================================Teacher Section=====================
+
+-----------------------For Question Number list API-----------------------
+URL - http://exam.ezii.live/api/question_number_list
+Method - POST 
+Response -
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "question_number": "Question number 1"
+        },
+        {
+            "id": 10,
+            "question_number": "Question number 10"
+        },
+        {
+            "id": 2,
+            "question_number": "Question number 2"
+        },
+        {
+            "id": 3,
+            "question_number": "Question number 3"
+        },
+        {
+            "id": 4,
+            "question_number": "Question number 4"
+        },
+        {
+            "id": 5,
+            "question_number": "Question number 5"
+        },
+        {
+            "id": 6,
+            "question_number": "Question number 6"
+        },
+        {
+            "id": 7,
+            "question_number": "Question number 7"
+        },
+        {
+            "id": 8,
+            "question_number": "Question number 8"
+        },
+        {
+            "id": 9,
+            "question_number": "Question number 9"
+        }
+    ]
+}
+-----------------------For Question Type list API-----------------------
+URL - http://exam.ezii.live/api/question_type_list
+Method - POST 
+Response -
+{
+    "success": true,
+    "data": [
+        {
+            "id": 6,
+            "question_type": "Essay Writing"
+        },
+        {
+            "id": 5,
+            "question_type": "Long Answer"
+        },
+        {
+            "id": 2,
+            "question_type": "Matching"
+        },
+        {
+            "id": 1,
+            "question_type": "Multiple Choice"
+        },
+        {
+            "id": 4,
+            "question_type": "Short Answer"
+        },
+        {
+            "id": 3,
+            "question_type": "True/False"
+        }
+    ]
+}
+
+-----------------------For Question Part list API-----------------------
+URL - http://exam.ezii.live/api/question_part_list
+Method - POST 
+Response -
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "question_part": "(a)"
+        },
+        {
+            "id": 2,
+            "question_part": "(b)"
+        },
+        {
+            "id": 3,
+            "question_part": "(c)"
+        },
+        {
+            "id": 4,
+            "question_part": "(d)"
+        },
+        {
+            "id": 5,
+            "question_part": "(e)"
+        },
+        {
+            "id": 6,
+            "question_part": "(f)"
+        },
+        {
+            "id": 7,
+            "question_part": "(g)"
+        },
+        {
+            "id": 8,
+            "question_part": "(h)"
+        },
+        {
+            "id": 9,
+            "question_part": "(i)"
+        }
+    ]
+}
+
+
+-----------------------For Question mark list API-----------------------
+URL - http://exam.ezii.live/api/question_mark_list
+Method - POST 
+Response -
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "question_mark": "1"
+        },
+        {
+            "id": 10,
+            "question_mark": "10"
+        },
+        {
+            "id": 11,
+            "question_mark": "11"
+        },
+        {
+            "id": 12,
+            "question_mark": "12"
+        },
+        {
+            "id": 2,
+            "question_mark": "2"
+        },
+        {
+            "id": 3,
+            "question_mark": "3"
+        },
+        {
+            "id": 4,
+            "question_mark": "4"
+        },
+        {
+            "id": 5,
+            "question_mark": "5"
+        },
+        {
+            "id": 6,
+            "question_mark": "6"
+        },
+        {
+            "id": 7,
+            "question_mark": "7"
+        },
+        {
+            "id": 8,
+            "question_mark": "8"
+        },
+        {
+            "id": 9,
+            "question_mark": "9"
+        }
+    ]
+}
+
+-----------------------For add subject question API-----------------------
+URL - http://exam.ezii.live/api/add_subject_question
+Method - POST 
+
+if MCQ question then request - 
+teacher_id:1
+exam_details_id:3
+total_marks:100
+passed_marks:35
+total_questions:5
+question_list:[{"create_subject_id": "75","question_number_id": 2,"question_type_id": 1,"question_part_id": 2,"question_mark_id": 11,"question": "dd","ideal_answer": "","ideal_answer_status": 0,"multiple": [  {"ideal_answer": "ssw","ideal_answer_status": 0  },  {"ideal_answer": "wdd","ideal_answer_status": 0},{"ideal_answer": "ad","ideal_answer_status": 0},{"ideal_answer": "z","ideal_answer_status": 1  }]}]
+role_id:5
+CreateSubject_id:46
+
+Response same 
+********************************
+Request - if subject id is blank
+teacher_id:1
+exam_details_id:3
+total_marks:100
+passed_marks:35
+total_questions:5
+question_list:[{"create_subject_id":"1","question_number_id":1,"question_type_id":1,"question_part_id":"1","question_mark_id":1,"question":"whats is 2/2 ?","ideal_answer":"1","ideal_answer_status":"1"},{"create_subject_id":"2","question_number_id":2,"question_type_id":2,"question_part_id":"2","question_mark_id":2,"question":"whats is 2+2 ?","ideal_answer":"4","ideal_answer_status":"1"},{"create_subject_id":"3","question_number_id":3,"question_type_id":3,"question_part_id":"3","question_mark_id":3,"question":"whats is 2-2 ?","ideal_answer":"0","ideal_answer_status":"1"}]
+role_id:5
+CreateSubject_id:
+
+Response -
+{
+    "success": true,
+    "data": "Subject Question data was generated.",
+    "exam_details_id": "3",
+    "CreateSubject_id": 18
+}
+
+****************
+
+Request - if subject id is not blank
+question_list:[{"create_subject_id":"1","question_number_id":1,"question_type_id":1,"question_part_id":"1","question_mark_id":1,"question":"whats is 2/2 ?","ideal_answer":"1","ideal_answer_status":"1"},{"create_subject_id":"2","question_number_id":2,"question_type_id":2,"question_part_id":"2","question_mark_id":2,"question":"whats is 2+2 ?","ideal_answer":"4","ideal_answer_status":"1"},{"create_subject_id":"3","question_number_id":3,"question_type_id":3,"question_part_id":"3","question_mark_id":3,"question":"whats is 2-2 ?","ideal_answer":"0","ideal_answer_status":"1"}]
+CreateSubject_id:16
+Response -
+{
+    "success": true,
+    "data": "Subject Question data was generated."
+}
+-------------------------Teacher dashboard list ---------------
+URL - http://exam.ezii.live/api/get_teacher_dashboard_list
+Method - post
+Request - 
+role_id:3
+
+Response - will be change the Response after created DB tbl
+{
+    "success": true,
+    "data": [
+        {
+            "teacher_id": 17,
+            "exam_details_id": 70,
+            "total_marks": 100,
+            "passed_marks": 22,
+            "total_questions": "10",
+            "create_subject_id": 8,
+            "question_number_id": 1,
+            "question_number": "Question number 1",
+            "question_type_id": 6,
+            "question_type": "Essay Writing",
+            "question_part_id": 1,
+            "question_part": "(a)",
+            "question_mark_id": 10,
+            "question_mark": "10",
+            "question": "eaeaea",
+            "ideal_answer": "ddddwdwdw",
+            "ideal_answer_status": 1
+        },
+        {
+            "teacher_id": 17,
+            "exam_details_id": 70,
+            "total_marks": 100,
+            "passed_marks": 232,
+            "total_questions": "1",
+            "create_subject_id": 6,
+            "question_number_id": 10,
+            "question_number": "Question number 10",
+            "question_type_id": 5,
+            "question_type": "Long Answer",
+            "question_part_id": 2,
+            "question_part": "(b)",
+            "question_mark_id": 10,
+            "question_mark": "10",
+            "question": "dddddddddd",
+            "ideal_answer": "dddddddddd",
+            "ideal_answer_status": 1
+        }
+    ]
+}
+-------------------------Teacher create question list ---------------
+URL - http://exam.ezii.live/api/get_teacher_create_question_list
+Method - post
+
+if get MCQ list 
+Request -  
+CreateSubject_id:45
+question_part_id:1
+
+Response - same
+***********************************
+Request - 
+CreateSubject_id:6
+question_part_id
+
+Response - 
+{
+    "success": true,
+    "data": [
+        {
+            "exam_details_id": 70,
+            "total_marks": 100,
+            "passed_marks": 232,
+            "total_questions": "1",
+            "create_subject_id": 6,
+            "question_number_id": 10,
+            "question_number": "Question number 10",
+            "question_type_id": 5,
+            "question_type": "Long Answer",
+            "question_part_id": 2,
+            "question_part": "(b)",
+            "question_mark_id": 10,
+            "question_mark": "10",
+            "question": "dddddddddd",
+            "ideal_answer": "dddddddddd",
+            "ideal_answer_status": 1
+        }
+    ]
+}
+
+-------------------------Teacher create question fetch edit data ---------------
+URL - http://exam.ezii.live/api/fetch_create_question_list_for_edit
+Method - post
+if get MCQ list 
+Request -  
+CreateSubject_id:45
+question_part_id:1
+
+Response - same
+***********************************
+Request - 
+CreateSubject_id:43
+question_part_id
+
+Response - 
+{
+    "success": true,
+    "data": [
+        {
+            "exam_details_id": 3,
+            "subject_details_id": 43,
+            "total_marks": 100,
+            "passed_marks": 35,
+            "total_questions": "5",
+            "create_subject_id": 18,
+            "question_number_id": 3,
+            "question_number": "Question number 3",
+            "question_type_id": 3,
+            "question_type": "True/False",
+            "question_part_id": 3,
+            "question_part": "(c)",
+            "question_mark_id": 3,
+            "question_mark": "3",
+            "question": "whats is 2-2 ?",
+            "ideal_answer": "0",
+            "ideal_answer_status": 1
+        }
+    ]
+}
+
+-------------------------Update Teacher create question list ---------------
+URL - http://exam.ezii.live/api/update_subject_data
+Method - post
+Request - 
+question_number_id:100
+question_type_id:2
+question_part_id:2
+question_mark_id:2
+question:what is this?
+ideal_answer:peace
+ideal_answer_status:1
+subject_details_id:23
+
+Response - 
+{
+    "success": true,
+    "data": "Subject data was updated successfully."
+}
+
+-------------------------delete Teacher create question list ---------------
+URL - http://exam.ezii.live/api/delete_subject_data
+Method - post
+Request - 
+subject_details_id:23
+
+Response - 
+{
+    "success": true,
+    "data": "subject data was Deleted successfully."
+}
+-------------------------Answer_sheet_list dashboard list ---------------
+URL - http://exam.ezii.live/api/get_answer_sheet_list
+Method - post
+Response - 
+{
+    "success": true,
+    "data": [
+        {
+            "id": 5,
+            "sheet_name": "answer",
+            "class_id": 1,
+            "class_name": "1st Class",
+            "exam_name": "Final",
+            "subject": "Marathi",
+            "academic_year_id": 1,
+            "year_name": "2021-2022",
+            "semister_id": 4,
+            "semester_name": "4th semester",
+            "division_id": 2,
+            "division_name": "B",
+            "role_id": 5,
+            "scanned_file": "http://exam.ezii.live/uploads/answer_sheet/scanned_file/scanned_file196600453520230209024535.pdf"
+        },
+        {
+            "id": 4,
+            "sheet_name": "answer",
+            "class_id": 1,
+            "class_name": "1st Class",
+            "exam_name": "Final",
+            "subject": "Marathi",
+            "academic_year_id": 1,
+            "year_name": "2021-2022",
+            "semister_id": 4,
+            "semester_name": "4th semester",
+            "division_id": 2,
+            "division_name": "B",
+            "role_id": 5,
+            "scanned_file": "http://exam.ezii.live/uploads/answer_sheet/scanned_file/scanned_file190382576720230209024532.pdf"
+        },
+        {
+            "id": 3,
+            "sheet_name": "answer",
+            "class_id": 1,
+            "class_name": "1st Class",
+            "exam_name": "Final",
+            "subject": "Marathi",
+            "academic_year_id": 1,
+            "year_name": "2021-2022",
+            "semister_id": 4,
+            "semester_name": "4th semester",
+            "division_id": 2,
+            "division_name": "B",
+            "role_id": 5,
+            "scanned_file": "http://exam.ezii.live/uploads/answer_sheet/scanned_file/scanned_file7827799120230209024530.pdf"
+        },
+        {
+            "id": 2,
+            "sheet_name": "answer",
+            "class_id": 1,
+            "class_name": "1st Class",
+            "exam_name": "Final",
+            "subject": "Marathi",
+            "academic_year_id": 1,
+            "year_name": "2021-2022",
+            "semister_id": 4,
+            "semester_name": "4th semester",
+            "division_id": 2,
+            "division_name": "B",
+            "role_id": 5,
+            "scanned_file": "http://exam.ezii.live/uploads/answer_sheet/scanned_file/scanned_file59142879520230209012122.pdf"
+        },
+        {
+            "id": 1,
+            "sheet_name": "answer",
+            "class_id": 1,
+            "class_name": "1st Class",
+            "exam_name": "Final",
+            "subject": "Marathi",
+            "academic_year_id": 1,
+            "year_name": "2021-2022",
+            "semister_id": 4,
+            "semester_name": "4th semester",
+            "division_id": 2,
+            "division_name": "B",
+            "role_id": 5,
+            "scanned_file": "http://exam.ezii.live/uploads/answer_sheet/scanned_file/"
+        }
+    ]
+}
+=========================Student section=======================
+-------------------------Fetch student profiledata ---------------
+URL - http://exam.ezii.live/api/fetch_student_profile
+Method - post
+1. Request - ***********IF ID IS NOT EMPTY OR NULL THEN YOU WILL GET PARTICUALR STUDENT DATA
+id:2
+
+Response - 
+{
+    "success": true,
+    "data": [
+        {
+            "id": 2,
+            "name": "Mayur",
+            "email": "Mayur@m.in",
+            "date_of_birth": "1970-01-01",
+            "aadhar_number": "111111111111",
+            "mobile": "2111111110",
+            "address": "pune",
+            "uid_number": 1,
+            "role": 4,
+            "institute_id": 12,
+            "institute_name": "AKTU2",
+            "division_id": 1,
+            "division_name": "A",
+            "class_id": 1,
+            "class_name": "1st Class",
+            "academic_id": 2,
+            "year_name": "2022-2023",
+            "image_url": "http://exam.ezii.live/uploads/student/profile_pic/profile_pic7426980320230214053832Mayur.jpg"
+        }
+    ]
+}
+
+2. Request - ***********IF ID IS NOT EMPTY OR NULL THEN YOU WILL GET ALL STUDENT DATA
+id:
+Reponse -
+
+{
+    "success": true,
+    "data": [
+        {
+            "id": 6,
+            "name": "Sada",
+            "email": "dddd@email.com",
+            "date_of_birth": "2016-02-03",
+            "aadhar_number": "70717071701",
+            "mobile": "222222",
+            "address": "eeeeeeeeeee",
+            "uid_number": 1890,
+            "role": 4,
+            "institute_id": 2,
+            "institute_name": "Destek",
+            "division_id": 2,
+            "division_name": "B",
+            "class_id": 2,
+            "class_name": "2nd Class",
+            "academic_id": 2,
+            "year_name": "2022-2023",
+            "image_url": "http://exam.ezii.live/uploads/student/profile_pic/profile_pic206108622920230214070413Sada.png"
+        },
+        {
+            "id": 5,
+            "name": "testMohd",
+            "email": "email@email.com",
+            "date_of_birth": "2023-02-15",
+            "aadhar_number": "1000222200001",
+            "mobile": "70771",
+            "address": "dddddddddd",
+            "uid_number": 70717071,
+            "role": 4,
+            "institute_id": 14,
+            "institute_name": "AKTU",
+            "division_id": 3,
+            "division_name": "C",
+            "class_id": 3,
+            "class_name": "3rd Class",
+            "academic_id": 3,
+            "year_name": "2023-2024",
+            "image_url": "http://exam.ezii.live/uploads/student/profile_pic/profile_pic96801255020230214063838testMohd.png"
+        }
+    ]
+}
+
+-------------------------Changed student passsword ---------------
+URL - http://exam.ezii.live/api/change_student_password
+Method - post
+Request - 
+password:123
+confirm_password:123
+student_id:1
+
+Response -
+{
+    "success": true,
+    "data": "Password has been successfully changed."
+}
+
+=========================Scanner section=======================
+-------------------------add answer sheet data ---------------
+URL - http://exam.ezii.live/api/add_answer_sheet_data
+Method - post
+Request-
+sheet_name:answer
+class_id:1
+exam_name:Final
+subject:Marathi
+academic_year_id:1
+semester_id:4
+division_id:2
+role_id:5
+scanned_file:
+Response -
+{
+    "success": true,
+    "data": "Details from the answer sheet were successfully added."
+}
+-------------------------add scanner profiledata ---------------
+URL - http://exam.ezii.live/api/add_scanner_data
+Method - post
+Request - 
+name:Mayur
+phone_no:9999999992
+date_of_joining:07/02/2020
+email_id:m3@m.in
+city:pune
+state:maharashatra
+country:India
+profile_pic:
+employee_id:CC121
+role_id:5
+
+Response - 
+{
+    "success": true,
+    "data": "Scanner Profile data was generated."
+}
+
+-------------------------Changed scanner passsword ---------------
+URL - http://exam.ezii.live/api/change_scanner_password
+Method - post
+Request - 
+password:123
+confirm_password:123
+employee_id:1
+
+Response -
+{
+    "success": true,
+    "data": "Password has been successfully changed."
+}
+
+-------------------------scanner dashboard list ---------------
+URL - http://exam.ezii.live/api/get_scanner_dashboard_list
+Method - post
+Request - 
+role_id:5
+
+Response - will be change the Response after created DB tbl
+{
+    "success": true,
+    "data": [
+        {
+            "id": 2,
+            "sheet_name": "answer",
+            "class_id": 1,
+            "class_name": "1st Class",
+            "exam_name": "Final",
+            "subject": "Marathi",
+            "academic_year_id": 1,
+            "year_name": "2021-2022",
+            "semister_id": 4,
+            "semester_name": "4th semester",
+            "division_id": 2,
+            "division_name": "B",
+            "role_id": 5,
+            "scanned_file": "http://exam.ezii.live/uploads/answer_sheet/scanned_file/scanned_file59142879520230209012122.pdf"
+        },
+        {
+            "id": 1,
+            "sheet_name": "answer",
+            "class_id": 1,
+            "class_name": "1st Class",
+            "exam_name": "Final",
+            "subject": "Marathi",
+            "academic_year_id": 1,
+            "year_name": "2021-2022",
+            "semister_id": 4,
+            "semester_name": "4th semester",
+            "division_id": 2,
+            "division_name": "B",
+            "role_id": 5,
+            "scanned_file": "http://exam.ezii.live/uploads/answer_sheet/scanned_file/"
+        }
+    ]
+}

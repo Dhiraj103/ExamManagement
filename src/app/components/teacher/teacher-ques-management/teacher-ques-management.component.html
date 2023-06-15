@@ -1,0 +1,161 @@
+<div class="container-fluid bg-white" style="margin-left: 1rem">
+  <div class="row p-1">
+    <div class="col-4 mt-4">
+      <span class="search">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="search All"
+          style="height: 45px"
+          (keyup)="applyFilter($event)"
+        />
+        <button class="btn">
+          <i
+            class="text-dark font-medium-5"
+            style="margin-top: -1em"
+            data-feather="search"
+          ></i>
+        </button>
+      </span>
+    </div>
+    <div class="col-2"></div>
+
+    <div class="col-3 mt-4">
+      <select class="form-select">
+        <option selected>subject</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="col-2 mt-4">
+      <select class="form-select">
+        <option selected>class</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="col-1">
+      <i
+        class="glyphicon glyphicon-tasks font-medium-3"
+        style="margin-top: 10px; padding-left: 20px"
+      ></i>
+    </div>
+  </div>
+  <!-- Begin: table -->
+
+  <div class="row">
+    <div class="mat-elevation-z8 mt-4 pl-0" style="overflow-x: auto">
+      <table mat-table [dataSource]="dataSource" style="width: 100%">
+        <!-- ID Column -->
+        <ng-container matColumnDef="exam_name">
+          <th
+            style="width: 10rem; min-width: 10rem"
+            mat-header-cell
+            *matHeaderCellDef
+          >
+            Folder Name
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <i class="fas fa-folder" style="color: #fff700"></i>
+            {{ row.exam_name }}
+          </td>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="class_name">
+          <th
+            style="width: 10rem; min-width: 10rem"
+            mat-header-cell
+            *matHeaderCellDef
+          >
+            Class
+          </th>
+          <td mat-cell *matCellDef="let row">{{ row.class_name }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="division_name">
+          <th
+            style="width: 10rem; min-width: 10rem"
+            mat-header-cell
+            *matHeaderCellDef
+          >
+            Division
+          </th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.division_name }}
+          </td>
+        </ng-container>
+
+        <!-- Fruit Column -->
+        <ng-container matColumnDef="subject_name">
+          <th
+            style="width: 10rem; min-width: 10rem"
+            mat-header-cell
+            *matHeaderCellDef
+          >
+            Subject
+          </th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.subject_name }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="year_name">
+          <th
+            style="width: 10rem; min-width: 10rem"
+            mat-header-cell
+            *matHeaderCellDef
+          >
+            Year
+          </th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.year_name }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="semester_name">
+          <th
+            style="width: 10rem; min-width: 10rem"
+            mat-header-cell
+            *matHeaderCellDef
+          >
+            Semester
+          </th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.semester_name }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="exam_date">
+          <th
+            style="width: 10rem; min-width: 10rem"
+            mat-header-cell
+            *matHeaderCellDef
+          >
+            Exam Date
+          </th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.exam_date }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+    <mat-paginator
+      (page)="handlePageEvent($event)"
+      [length]="length"
+      [pageSize]="pageSize"
+      [pageIndex]="pageIndex"
+      aria-label="Select page of users"
+    ></mat-paginator>
+  </div>
+
+  <!-- End: table -->
+</div>
+
+<!-- END: Content-->

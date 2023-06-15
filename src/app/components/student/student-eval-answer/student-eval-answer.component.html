@@ -1,0 +1,93 @@
+<!-- BEGIN: Content-->
+<div class="app-content content" style="margin-left: 0">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+
+  <div class="content-wrapper container-xxl p-0">
+    <div class="content-header row"></div>
+    <div class="content-body">
+      <div class="row shadow" style="background: white">
+        <div class="col p-1">
+          <button (click)="navigateDashboard()" class="btn btn-primary">
+            Back
+          </button>
+          <button class="btn btn-primary float-end">Apply For Recheck</button>
+        </div>
+      </div>
+      <!-- BODY CONTENT -->
+      <!-- ANS Paper -->
+      <div class="container">
+        <div
+          class="row p-5"
+          style="gap: 2rem; display: flex; justify-content: center"
+        >
+          <div
+            class="col shadow"
+            style="background: white; max-width: 50% !important"
+          >
+            <div class="col col-lg-2 p-1">
+              <p class="text-center">
+                <span
+                  class="border border-primary"
+                  style="border-radius: 4px; padding: 4px"
+                  >Answer</span
+                >
+              </p>
+            </div>
+            <div
+              class="col-md-auto m-auto d-flex justify-content-center align-items-center"
+            >
+              <img
+                class="img-fluid"
+                src="https://pdffile.co.in/wp-content/uploads/pdf-thumbnails/2022/03/small/class-10-social-science-question-paper-2022--300.jpg"
+                alt=""
+              />
+            </div>
+            <div class="col d-flex justify-content-between mb-2 mt-2">
+              <button
+                style="
+                  border: 1px solid #4b78bb;
+                  padding: 5px 20px;
+                  border-radius: 4px;
+                "
+              >
+                <i class="fas fa-arrow-left"></i>
+              </button>
+              <button
+                style="
+                  border: 1px solid #4b78bb;
+                  padding: 5px 20px;
+                  border-radius: 4px;
+                "
+                class="float-end"
+              >
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <!-- ANS paper -->
+
+          <div class="col-sm-1" style="width: 0.33333%">
+            <button
+              (click)="navigateToEvalPaper()"
+              class="btn-outline-primary"
+              style="
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                right: -25px;
+              "
+            >
+              <i class="fas fa-question-circle"></i>
+              Question
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BODY CONTENT -->
+    </div>
+  </div>
+</div>
+<!-- END: Content-->
