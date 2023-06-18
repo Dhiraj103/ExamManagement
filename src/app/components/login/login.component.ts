@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   res: any;
   email: string = '';
   password: string = '';
+  spinnerDisplay:boolean=false;
 
   constructor(
     private formbuilder: FormBuilder,
@@ -46,6 +47,8 @@ export class LoginComponent implements OnInit {
         '',
         Validators.compose([Validators.required, Validators.minLength(3)]),
       ],
+
+
     });
   };
 
@@ -63,6 +66,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+
     const formData = new FormData();
     formData.append('email', this.login.value.user_email);
     formData.append('password', this.login.value.password);
@@ -93,12 +97,16 @@ export class LoginComponent implements OnInit {
     //     this.router.navigate(['/login'],  { relativeTo: this.route });
     //   }
     // });
-
+   if(this.login.valid)
+   {
+    this.spinnerDisplay=true;
     this._loginservice.login(formData).subscribe(
       (res: any) => {
         //console.log(res);
+
         this.result = res;
         console.log(this.result);
+
         if (this.result.success === true) {
           console.log(this.result.data.role);
           var role = this.result.data.role;
@@ -111,26 +119,31 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('instituteId', this.result.data.institute_id);
 
           if (role == 1) {
+            this.spinnerDisplay=false;
             console.log('click');
             this.router.navigate(['/admin/admin/dashboard'], {
               relativeTo: this.route,
             });
           } else if (role == 2) {
+            this.spinnerDisplay=false;
             console.log('click');
             this.router.navigate(['/examiner/examiner/app-exam-management'], {
               relativeTo: this.route,
             });
           } else if (role == 3) {
+            this.spinnerDisplay=false;
             console.log('click');
             this.router.navigate(['/teacher/teacher/app-teacher-dashboard'], {
               relativeTo: this.route,
             });
           } else if (role == 4) {
+            this.spinnerDisplay=false;
             console.log('click');
             this.router.navigate(['/student/student/app-student-dashboard'], {
               relativeTo: this.route,
             });
           } else if (role == 5) {
+            this.spinnerDisplay=false;
             console.log('click');
             this.router.navigate(['/scanner/scanner/app-scanner-dashboard'], {
               relativeTo: this.route,
@@ -146,6 +159,9 @@ export class LoginComponent implements OnInit {
         }
       }
     );
+   }else{
+    alert("Please enter username and password");
+   }
     console.log(formData.getAll('email'));
     console.log(formData.getAll('password'));
   }

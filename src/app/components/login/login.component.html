@@ -46,14 +46,7 @@
                     >Please enter vaild email Id.
                   </mat-error>
                 </mat-form-field>
-              </div>
-              <div class="mb-1">
-                <div class="d-flex justify-content-between">
-                  <label class="form-label" for="login-password">&nbsp;</label
-                  ><a href="auth-forgot-password-cover.html"
-                    ><small>Forgot Password?</small></a
-                  >
-                </div>
+
                 <mat-form-field class="example-full-width" appearance="fill">
                   <mat-label>Enter your password</mat-label>
                   <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" [(ngModel)]="password" (keyup.enter)="onSubmit()"/>
@@ -80,6 +73,16 @@
                     >Please enter at least 4 letters.
                   </mat-error>
                 </mat-form-field>
+
+              </div>
+              <div class="mb-1">
+                <div class="d-flex justify-content-between">
+                  <label class="form-label" for="login-password">&nbsp;</label
+                  ><a href="auth-forgot-password-cover.html"
+                    ><small>Forgot Password?</small></a
+                  >
+                </div>
+
               </div>
               <button class="btn btn-primary w-100" tabindex="4">Log in</button>
             </form>
@@ -91,6 +94,9 @@
               <i style="font-size: 2rem" class="fab fa-instagram hvr-float"></i>
               <i style="font-size: 2rem" class="fab fa-whatsapp hvr-float"></i>
             </span> -->
+            <span class="d-flex justify-content-center align-items-center spinnerMargin " *ngIf="spinnerDisplay">
+            <mat-spinner strokeWidth="10" [diameter]="45" color="warn"></mat-spinner>
+            </span>
           </div>
         </div>
       </div>

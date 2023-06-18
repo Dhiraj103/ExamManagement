@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 // import { EventEmitter } from 'stream';
 
 @Component({
@@ -15,7 +15,8 @@ export class HeaderComponent implements OnInit {
   user_type = localStorage.getItem('user_type');
   role = localStorage.getItem('role');
   ImgUrl = localStorage.getItem('imgUrl');
-  constructor(private router: Router) {}
+
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {}
 
@@ -51,5 +52,9 @@ export class HeaderComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
     });*/
+  }
+
+  logout() {
+    this.router.navigate(['/login'], { relativeTo: this.route });
   }
 }

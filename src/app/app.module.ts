@@ -23,6 +23,7 @@ import { ScannerComponent } from './components/scanner/scanner.component';
 import { MaterialModule } from '../../material.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatSelectModule } from '@angular/material/select';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 // import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
@@ -50,6 +51,7 @@ import { MatSelectModule } from '@angular/material/select';
     HttpClientModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatProgressSpinnerModule
   ],
   exports: [MaterialModule],
 })

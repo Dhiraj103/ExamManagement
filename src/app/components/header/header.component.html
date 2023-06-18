@@ -36,7 +36,7 @@
       <li *ngIf="role == '5'" (click)="gotoScannerProfile()">
         <a class="dropdown-item">Profile</a>
       </li>
-      <li><a class="dropdown-item">Log Out</a></li>
+      <li><a class="dropdown-item" (click)="logout()">Log Out</a></li>
       <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
     </ul>
   </div>
