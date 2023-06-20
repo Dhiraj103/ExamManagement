@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LogoutService } from 'src/app/services/logout.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -14,7 +15,7 @@ export class SidebarComponent implements OnInit {
   user_type = localStorage.getItem('user_type');
   role = localStorage.getItem('role');
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute,private _logout:LogoutService) {}
 
   ngOnInit(): void {}
 
@@ -36,6 +37,6 @@ export class SidebarComponent implements OnInit {
   }
 
   logout() {
-    this.router.navigate(['/login'], { relativeTo: this.route });
+    this._logout.logout();
   }
 }

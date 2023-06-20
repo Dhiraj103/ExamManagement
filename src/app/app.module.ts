@@ -23,7 +23,7 @@ import { ScannerComponent } from './components/scanner/scanner.component';
 import { MaterialModule } from '../../material.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatSelectModule } from '@angular/material/select';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 // import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
@@ -31,13 +31,13 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   declarations: [
     AppComponent,
     LoginComponent,
-
     ExaminerComponent,
     TeacherComponent,
     StudentComponent,
     SidebarComponent,
     HeaderComponent,
-    ScannerComponent
+    ScannerComponent,
+    NotfoundComponent
   ],
   providers: [LoginService, DatePipe],
   bootstrap: [AppComponent],
@@ -51,7 +51,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     HttpClientModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatProgressSpinnerModule
   ],
   exports: [MaterialModule],
 })
