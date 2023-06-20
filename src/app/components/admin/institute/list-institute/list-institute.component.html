@@ -21,13 +21,12 @@
   </div>
 
   <div class="mat-elevation-z8" style="overflow-x: auto">
-    <table mat-table [dataSource]="dataSource" style="width: 100%">
+    <table mat-table [dataSource]="dataSource" style="width: 100%" matSort (matSortChange)="announceSortChange($event)">
       <!-- ID Column -->
       <ng-container matColumnDef="institute_name">
         <th
           style="width: 10rem; min-width: 10rem"
-          mat-header-cell
-          *matHeaderCellDef
+          mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"
         >
           Institute Name
         </th>
@@ -38,8 +37,7 @@
       <ng-container matColumnDef="university">
         <th
           style="width: 10rem; min-width: 10rem"
-          mat-header-cell
-          *matHeaderCellDef
+          mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"
         >
           University
         </th>

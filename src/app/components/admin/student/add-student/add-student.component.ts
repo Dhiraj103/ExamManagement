@@ -97,6 +97,7 @@ export class AddStudentComponent implements OnInit {
       institute: ['', Validators.compose([Validators.required])],
       employee_id: ['', Validators.compose([Validators.required])],
       user_name: ['', Validators.compose([Validators.required])],
+      last_name: ['', Validators.compose([Validators.required])],
       user_email: [
         '',
         Validators.compose([Validators.required, Validators.email]),
@@ -133,6 +134,7 @@ export class AddStudentComponent implements OnInit {
 
     formData.append('uid_number', this.addexaminer.value.employee_id);
     formData.append('name', this.addexaminer.value.user_name);
+    formData.append('lastname', this.addexaminer.value.last_name);
     formData.append('email', this.addexaminer.value.user_email);
     formData.append('password', this.addexaminer.value.user_password);
 

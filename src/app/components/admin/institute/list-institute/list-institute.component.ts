@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort ,Sort, MatSortModule} from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { PageEvent } from '@angular/material/paginator';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -10,6 +10,7 @@ import {
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { InstituteService } from 'src/app/services/institute.service';
+import {LiveAnnouncer} from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-list-institute',
@@ -41,11 +42,19 @@ export class ListInstituteComponent implements AfterViewInit {
     private _instituteService: InstituteService,
     private router: Router,
     private route: ActivatedRoute,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _liveAnnouncer: LiveAnnouncer
   ) {}
-
+  announceSortChange(sortState: Sort) { 
+    if (sortState.direction) {
+    this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+  } else {
+    this._liveAnnouncer.announce('Sorting cleared');
+  }
+}
   ngAfterViewInit() {
     this.getInstitute();
+    this.dataSource.sort = this.sort;
   }
 
   applyFilter(event: Event) {
