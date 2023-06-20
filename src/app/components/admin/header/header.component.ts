@@ -1,6 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 import { ActivatedRoute, Router } from '@angular/router';
-// import { EventEmitter } from 'stream';
+import { LogoutService } from 'src/app/services/logout.service';
+
+
 
 @Component({
   selector: 'app-header',
@@ -15,7 +18,9 @@ export class HeaderComponent implements OnInit {
   user_type = localStorage.getItem('user_type');
   ImgUrl = localStorage.getItem('imgUrl');
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute,private _logout:LogoutService) {}
+
+ 
 
   ngOnInit(): void {}
 
@@ -46,7 +51,13 @@ export class HeaderComponent implements OnInit {
     });*/
   }
 
-  logout() {
-    this.router.navigate(['/login'], { relativeTo: this.route });
+
+  logout(){
+    this._logout.logout()
+
+  }
+
+  loadProfile(){
+    this.router.navigate(['/admin/admin/app-admin-profile'])
   }
 }

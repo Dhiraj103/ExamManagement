@@ -12,6 +12,21 @@ import { DatePipe } from '@angular/common';
 import { InstituteService } from 'src/app/services/institute.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+export function ConfirmedValidator(controlName: string, matchingControlName: string){
+  return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+      if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+          return;
+      }
+      if (control.value !== matchingControl.value) {
+          matchingControl.setErrors({ confirmedValidator: true });
+      } else {
+          matchingControl.setErrors(null);
+      }
+  }
+}
+
 @Component({
   selector: 'app-add-teacher',
   templateUrl: './add-teacher.component.html',
@@ -75,10 +90,18 @@ export class AddTeacherComponent implements OnInit {
         '',
         Validators.compose([Validators.required, Validators.minLength(2)]),
       ],
+      confirm_password:['',Validators.compose([Validators.required])],
       user_dob: ['', Validators.compose([Validators.required])],
       aadhar_number: ['', Validators.compose([Validators.required])],
       address: ['', Validators.compose([Validators.required])],
+    },{ 
+      validator: ConfirmedValidator('user_password', 'confirm_password')
     });
+  }
+
+  //Getter for confirm password
+  get f(){
+    return this.addexaminer.controls;
   }
 
   onSubmit() {

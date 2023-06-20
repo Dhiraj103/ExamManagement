@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   res: any;
   email: string = '';
   password: string = '';
+  logrole:any=localStorage.getItem('role');
   spinnerDisplay:boolean=false;
-
   constructor(
     private formbuilder: FormBuilder,
     private _loginservice: LoginService,
@@ -31,8 +31,35 @@ export class LoginComponent implements OnInit {
     });
     this.loginForm();
     this.checkStorage();
+//if user is logged in then
+if(this.isLoggedIn()){if (this.logrole == 1) {
+  console.log('click');
+  this.router.navigate(['/admin/admin/dashboard']);
+} else if (this.logrole == 2) {
+  console.log('click');
+  this.router.navigate(['/examiner/examiner/app-exam-management']);
+} else if (this.logrole == 3) {
+  console.log('click');
+  this.router.navigate(['/teacher/teacher/app-teacher-dashboard']);
+} else if (this.logrole == 4) {
+  console.log('click');
+  this.router.navigate(['/student/student/app-student-dashboard']);
+} else if (this.logrole == 5) {
+  console.log('click');
+  this.router.navigate(['/scanner/scanner/app-scanner-dashboard']);
+}
+} else {
+this.router.navigate(['/login']);
+}
+    
   }
-
+  isLoggedIn(){
+      if(localStorage.getItem('role')!==null){
+        return true;
+      }else{
+        return false;
+      }
+  }
   loginForm() {
     this.login = this.formbuilder.group({
       user_email: [

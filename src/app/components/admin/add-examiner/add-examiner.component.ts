@@ -12,6 +12,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { InstituteService } from 'src/app/services/institute.service';
 
+export function ConfirmedValidator(controlName: string, matchingControlName: string){
+  return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+      if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+          return;
+      }
+      if (control.value !== matchingControl.value) {
+          matchingControl.setErrors({ confirmedValidator: true });
+      } else {
+          matchingControl.setErrors(null);
+      }
+  }
+}
+
+
+
 @Component({
   selector: 'app-add-examiner',
   templateUrl: './add-examiner.component.html',
@@ -79,18 +96,28 @@ export class AddExaminerComponent implements OnInit {
         '',
         Validators.compose([Validators.required, Validators.minLength(2)]),
       ],
+      confirm_password:['',Validators.compose([Validators.required])],
       user_dob: ['', Validators.compose([Validators.required])],
       aadhar_number: [
         '',
         Validators.compose([Validators.required, Validators.max(999999999999)]),
       ],
       address: ['', Validators.compose([Validators.required])],
+    }, { 
+      validator: ConfirmedValidator('user_password', 'confirm_password')
     });
   }
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action);
   }
+
+  
+//Getters for confirm password validation
+  get f(){
+    return this.addexaminer.controls;
+  }
+
 
   onSubmit() {
     const formData = new FormData();
@@ -154,3 +181,4 @@ export class AddExaminerComponent implements OnInit {
     }
   }
 }
+

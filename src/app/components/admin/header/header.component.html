@@ -30,8 +30,11 @@
       class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end"
       aria-labelledby="dropdownMenuButton1"
     >
-      <li><a class="dropdown-item">Profile</a></li>
+      <li><a class="dropdown-item" (click)="loadProfile()">Profile</a></li>
+
       <li><a class="dropdown-item" (click)="logout()">Log Out</a></li>
+
+    
       <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
     </ul>
   </div>
