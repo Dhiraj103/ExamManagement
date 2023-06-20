@@ -56,4 +56,8 @@ export class HeaderComponent implements OnInit {
     this._logout.logout()
 
   }
+
+  loadProfile(){
+    this.router.navigate(['/admin/admin/app-admin-profile'])
+  }
 }
