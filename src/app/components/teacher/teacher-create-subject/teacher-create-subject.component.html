@@ -1,6 +1,18 @@
 <div class="card ml-3" style="height: auto">
   <div class="card-body">
     <form [formGroup]="createSubject">
+      <div class="row p-2 mb-0">
+        <div class="col-4">
+          <div class="form-group">
+           
+            <mat-form-field appearance="fill" style="margin-bottom: 0px;">
+              <mat-label>Add Instructions</mat-label>
+              <input type="text" matInput formControlName="addInstructions" />
+              <mat-error>Instructions is required </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
       <div class="row p-2">
         <div class="col-2">
           <div class="form-group">
@@ -60,7 +72,7 @@
                       </mat-select>
                       <mat-error>Que. Number is required </mat-error>
                     </mat-form-field> -->
-              <mat-form-field appearance="fill">
+              <mat-form-field appearance="fill" style="padding-left: 0px;">
                 <mat-label>Select Que. Number</mat-label>
                 <mat-select formControlName="queNumber">
                   <mat-option
@@ -142,7 +154,7 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row p-2">
             <div class="col-3">
               <div class="form-group">
                 <!-- <input
@@ -180,7 +192,7 @@
             </div>
           </div>
 
-          <div class="row w-100">
+          <div class="row w-100 p-2">
             <div class="col-lg-4">
               <mat-form-field *ngIf="!showInput" appearance="fill">
                 <mat-label>Write Ans. Here</mat-label>

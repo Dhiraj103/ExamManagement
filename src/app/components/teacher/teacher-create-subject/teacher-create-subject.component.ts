@@ -160,6 +160,7 @@ export class TeacherCreateSubjectComponent implements OnInit {
 
   loadForm() {
     this.createSubject = this.fb.group({
+      addInstructions:['',Validators.compose([Validators.required])],
       totalMarks: ['', Validators.compose([Validators.required])],
       PassMarks: ['', Validators.compose([Validators.required])],
       totalQue: ['', Validators.compose([Validators.required])],
