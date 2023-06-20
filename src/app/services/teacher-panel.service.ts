@@ -10,7 +10,7 @@ export class TeacherPanelService {
     throw new Error('Method not implemented.');
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getQuestionNumberList(data: any) {
     return this.http.post(`${environment.baseurl}question_number_list`, data);
@@ -48,35 +48,25 @@ export class TeacherPanelService {
 
   editTeacherCreateQueList(data: any) {
     return this.http.post(
-      `${environment.baseurl}fetch_create_question_list_for_edit
-      `,
-      data
-    );
-  }
+      `${environment.baseurl}fetch_create_question_list_for_edit`,data);}
 
   updateTeacherCreateQueList(data: any) {
     return this.http.post(
-      `${environment.baseurl}update_subject_data
-
-      `,
+      `${environment.baseurl}update_subject_data`,
       data
     );
   }
 
   deleteTeacherCreateQueList(data: any) {
     return this.http.post(
-      `${environment.baseurl}delete_subject_data
-
-      `,
+      `${environment.baseurl}delete_subject_data`,
       data
     );
   }
 
   getQuesPaperManage(data: any) {
     return this.http.post(
-      `${environment.baseurl}question_paper_managment_list
-
-      `,
+      `${environment.baseurl}question_paper_managment_list`,
       data
     );
   }
@@ -91,9 +81,7 @@ export class TeacherPanelService {
 
   getAnsSheets(data: any) {
     return this.http.post(
-      `${environment.baseurl}get_answersheet_data_by_id
-
-      `,
+      `${environment.baseurl}get_answersheet_data_by_id`,
       data
     );
   }

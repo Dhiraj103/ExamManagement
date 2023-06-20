@@ -94,10 +94,11 @@ const routes: Routes = [
       {
         path: 'app-teacher-answer-sheets',
         component: TeacherAnswerSheetsComponent,
-      },
+      }, {path:'app-admin-profile',component:AdminProfileComponent},
     ],
   },
   { path: 'logout', component: AddExaminerComponent },
+ 
 ];
 
 @NgModule({

@@ -12,4 +12,8 @@ export class ResultManagementComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  publish(){
+    console.log("clicked!");
+  }
+
 }

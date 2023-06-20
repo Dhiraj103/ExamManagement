@@ -91,9 +91,12 @@
         <label for="">Profile Picture</label> <br />
         <input type="file" id="my_file"  />
       </div> -->
-      <div class="">
-        <img *ngIf="ImgUrl" src="{{ ImgUrl }}" class="img-fluid img" />
+      <div *ngIf="ImgUrl">
+        <img [src]="ImgUrl" class="img-fluid img" alt="Image">
       </div>
+      <!-- <div class="">
+        <img *ngIf="ImgUrl" src="{{ ImgUrl }}" class="img-fluid img" />
+      </div> -->
     </div>
   </div>
 </form>
