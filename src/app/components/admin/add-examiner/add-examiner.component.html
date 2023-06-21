@@ -159,10 +159,7 @@
             </mat-error>
           </mat-form-field>
         </div>
-        <div class="col-lg-4">
-          <label for="">Profile Picture</label> <br />
-          <input type="file" id="my_file" (change)="readUrl($event)" />
-        </div>
+       
         <div class="col-md-4">
           <mat-form-field appearance="fill" class="example-full-width">
             <mat-label>Address</mat-label>
@@ -172,7 +169,12 @@
             </mat-error>
           </mat-form-field>
         </div>
-
+        
+        <div class="col-lg-4">
+          <label for="">Profile Picture</label> <br />
+          <input type="file" id="my_file" (change)="readUrl($event)" />
+        </div>
+        
         <div class="col-md-12" style="padding-bottom: 24%">
           <button
             type="submit"
