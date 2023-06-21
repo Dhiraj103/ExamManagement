@@ -79,7 +79,8 @@ export class AddExaminerComponent implements OnInit {
       institute: ['', Validators.compose([Validators.required])],
       employee_id: ['', Validators.compose([Validators.required])],
       user_name: ['', Validators.compose([Validators.required])],
-      Last_name: ['', Validators.compose([Validators.required])],
+
+      last_name: ['', Validators.compose([Validators.required])],
       user_email: [
         '',
         Validators.compose([Validators.required, Validators.email]),
