@@ -101,13 +101,12 @@
 
   <!-- TABLE -->
   <div class="mat-elevation-z8 mt-4" style="overflow-x: auto">
-    <table mat-table [dataSource]="dataSource" style="width: 100%">
+    <table mat-table [dataSource]="dataSource" style="width: 100%" matSort (matSortChange)="announceSortChange($event)">
       <!-- Progress Column -->
       <ng-container matColumnDef="sheet_name">
         <th
           style="width: 15rem; min-width: 10rem"
-          mat-header-cell
-          *matHeaderCellDef
+          mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"
         >
           Folder Name
         </th>
@@ -120,8 +119,7 @@
       <ng-container matColumnDef="exam_name">
         <th
           style="width: 10rem; min-width: 10rem"
-          mat-header-cell
-          *matHeaderCellDef
+          mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"
         >
           Exam Name
         </th>
@@ -132,8 +130,7 @@
       <ng-container matColumnDef="subject">
         <th
           style="width: 10rem; min-width: 10rem"
-          mat-header-cell
-          *matHeaderCellDef
+          mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"
         >
           Subject
         </th>
@@ -144,8 +141,7 @@
       <ng-container matColumnDef="class">
         <th
           style="width: 10rem; min-width: 10rem"
-          mat-header-cell
-          *matHeaderCellDef
+          mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"
         >
           Class
         </th>
@@ -155,8 +151,7 @@
       <ng-container matColumnDef="year_name">
         <th
           style="width: 10rem; min-width: 10rem"
-          mat-header-cell
-          *matHeaderCellDef
+          mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"
         >
           Academic Year
         </th>
@@ -168,8 +163,7 @@
       <ng-container matColumnDef="division">
         <th
           style="width: 10rem; min-width: 10rem"
-          mat-header-cell
-          *matHeaderCellDef
+          mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"
         >
           Division
         </th>
@@ -194,8 +188,7 @@
       <ng-container matColumnDef="students">
         <th
           style="width: 10rem; min-width: 10rem"
-          mat-header-cell
-          *matHeaderCellDef
+          mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"
         >
           Total Students
         </th>

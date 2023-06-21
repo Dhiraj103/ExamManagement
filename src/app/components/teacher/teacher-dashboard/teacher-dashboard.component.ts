@@ -4,7 +4,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ExaminerPanelService } from 'src/app/services/examiner-panel.service';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
+import {LiveAnnouncer} from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-teacher-dashboard',
@@ -36,11 +37,13 @@ export class TeacherDashboardComponent implements OnInit {
   teacher_id: any;
   constructor(
     private router: Router,
-    private _examiner_panel: ExaminerPanelService
+    private _examiner_panel: ExaminerPanelService,
+    private _liveAnnouncer: LiveAnnouncer
   ) {}
 
   ngOnInit(): void {
     this.getExamDetails();
+    this.dataSource.sort = this.sort;
   }
   navigateCreateSubject() {
     this.router.navigate(['./teacher/teacher/app-teacher-create-subject']);
@@ -58,6 +61,13 @@ export class TeacherDashboardComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+  announceSortChange(sortState: Sort) { 
+    if (sortState.direction) {
+    this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+  } else {
+    this._liveAnnouncer.announce('Sorting cleared');
+  }
+}
 
   getExamDetails() {
     this._examiner_panel.getExamList(this.data).subscribe((res) => {

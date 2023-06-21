@@ -3,12 +3,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatSort } from '@angular/material/sort';
+import { MatSort,Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ExaminerPanelService } from 'src/app/services/examiner-panel.service';
 import { ScannerPanelService } from 'src/app/services/scanner-panel.service';
 import { groupBy } from 'lodash';
+import {LiveAnnouncer} from '@angular/cdk/a11y';
+
 
 @Component({
   selector: 'app-teacher-answer-sheets',
@@ -49,12 +51,23 @@ export class TeacherAnswerSheetsComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private dialog: MatDialog,
     private scannerSer: ScannerPanelService,
-    private TeacherPanelService: TeacherPanelService
+    private TeacherPanelService: TeacherPanelService,
+    private _liveAnnouncer: LiveAnnouncer
   ) {}
 
   ngOnInit(): void {
     this.getAnswerSheets();
+    this.dataSource.sort = this.sort;
   }
+
+  announceSortChange(sortState: Sort) { 
+    if (sortState.direction) {
+    this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+  } else {
+    this._liveAnnouncer.announce('Sorting cleared');
+  }
+}
+  
   getAnswerSheets() {
     const fromData = new FormData();
     fromData.append('role_id', '5');
