@@ -38,6 +38,15 @@
             </mat-error>
           </mat-form-field>
         </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="last_name" />
+            <mat-error *ngIf="addexaminer.controls.last_name.errors?.required"
+              >Last name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
 
         <div class="col-md-4">
           <mat-form-field appearance="fill">

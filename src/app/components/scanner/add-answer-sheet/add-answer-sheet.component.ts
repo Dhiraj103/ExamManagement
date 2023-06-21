@@ -124,7 +124,7 @@ export class AddAnswerSheetComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log('clicked');
+    console.log('clicked');
     this._snackBar.open('Uploading...', '', { duration: 0 });
     this.setSubmitting(true);
     const formData = new FormData();

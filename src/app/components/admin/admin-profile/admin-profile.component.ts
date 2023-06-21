@@ -143,6 +143,7 @@ export class AdminProfileComponent implements OnInit {
     
       onSubmit() {
         const formData = new FormData();
+        
         let getDatePicker = this.addProfile.value.doj;
         let dateFormat = this.datepipe.transform(getDatePicker, 'yyyy-MM-dd');
         this.date = dateFormat;
