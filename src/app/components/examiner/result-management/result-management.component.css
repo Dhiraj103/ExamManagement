@@ -6,3 +6,44 @@
   background: #4b78bb !important;
   color: white !important;
 }
+
+
+
+.custom-button {
+  /* Button styles */
+  background-color: #4b78bb;
+  color: #fff;
+  font-size: 16px;
+  padding: 6px 14px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  /* box-shadow: 0px 2px 5px #4b78bb; */
+  outline: none;
+  border: none;
+  
+  /* Button hover state */
+
+  &:hover {
+    background-color: #1976d2;
+  }
+  
+  /* Button active state */
+  &:active {
+    background-color: #0d47a1;
+    box-shadow: 0px 1px 3px #4b78bb;
+    transform: translateY(1px);
+  }
+  
+  /* Button focus state */
+  &:focus {
+    background-color: #1976d2;
+    box-shadow: 0px 0px 5px rgba(33, 150, 243, 0.5);
+  }
+  
+  /* Button click state */
+  &:active:focus {
+    background-color: #0d47a1;
+    box-shadow: 0px 0px 8px rgba(33, 150, 243, 0.7);
+    transform: translateY(2px);
+  }
+}

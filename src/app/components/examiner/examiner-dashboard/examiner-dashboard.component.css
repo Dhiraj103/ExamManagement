@@ -10,6 +10,7 @@
 
 .btn-primary:hover:not(.disabled):not(:disabled) {
   box-shadow: 0 8px 25px -8px #4b78bb !important;
+
 }
 .btn-primary {
   background: #4b78bb !important;
@@ -19,10 +20,92 @@
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active {
-  color: #fff;
-  background-color: #4b78bb !important;
+  color: #fff !important;
+  background-color: #226bd7 !important;
 }
 
 .mat-form-field-wrapper {
   padding-bottom: 0 !important;
+}
+.btn-outline-primary{
+
+  font-size: 16px;
+  padding: 8px 30px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  /* box-shadow: 0px 0.5px 5px #4b78bb; */
+  /* outline: none; */
+  /* border: none; */
+  &:hover {
+    background-color: #1976d2;
+  }
+  
+  /* Button active state */
+  &:active {
+    background-color: #0d47a1;
+    box-shadow: 0px 1px 3px #4b78bb;
+    transform: translateY(1px);
+  }
+  
+  /* Button focus state */
+  &:focus {
+    background-color: #1976d2;
+    box-shadow: 0px 0px 5px rgba(33, 150, 243, 0.5);
+  }
+  
+  /* Button click state */
+  &:active:focus {
+    background-color: #0d47a1;
+    box-shadow: 0px 0px 8px rgba(33, 150, 243, 0.7);
+    transform: translateY(2px);
+  }
+}
+.btn-outline-primary:focus,
+.btn-outline-primary.active {
+  color: #fff !important;
+  background-color:  #226bd7 !important;
+}
+.btn-outline-primary:hover:not(.disabled):not(:disabled) {
+  color: #fff !important;
+  box-shadow: 0 8px 25px -8px  #4b78bb !important;
+  background-color: #4b78bb;
+}
+
+.custom-button {
+  /* Button styles */
+  background-color: #4b78bb;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 30px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  /* box-shadow: 0px 2px 5px #4b78bb; */
+  outline: none;
+  border: none;
+  
+  /* Button hover state */
+
+  &:hover {
+    background-color: #1976d2;
+  }
+  
+  /* Button active state */
+  &:active {
+    background-color: #0d47a1;
+    box-shadow: 0px 1px 3px #4b78bb;
+    transform: translateY(1px);
+  }
+  
+  /* Button focus state */
+  &:focus {
+    background-color: #1976d2;
+    box-shadow: 0px 0px 5px rgba(33, 150, 243, 0.5);
+  }
+  
+  /* Button click state */
+  &:active:focus {
+    background-color: #0d47a1;
+    box-shadow: 0px 0px 8px rgba(33, 150, 243, 0.7);
+    transform: translateY(2px);
+  }
 }
