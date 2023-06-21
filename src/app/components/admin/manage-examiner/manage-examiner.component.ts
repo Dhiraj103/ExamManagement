@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ExaminerService } from 'src/app/services/examiner.service';
 import { PageEvent } from '@angular/material/paginator';
@@ -10,7 +10,7 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
-
+import {LiveAnnouncer} from '@angular/cdk/a11y';
 @Component({
   selector: 'app-manage-examiner',
   templateUrl: './manage-examiner.component.html',
@@ -20,10 +20,12 @@ export class ManageExaminerComponent implements AfterViewInit {
   displayedColumns: string[] = [
     'uid_number',
     'name',
+    'lastname',
     'email',
     'mobile',
     'date_of_birth',
     'Action',
+
   ];
   dataSource: any;
   users: any;
@@ -44,13 +46,23 @@ export class ManageExaminerComponent implements AfterViewInit {
     private _examinerService: ExaminerService,
     private router: Router,
     private route: ActivatedRoute,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _liveAnnouncer: LiveAnnouncer
   ) {}
 
+  announceSortChange(sortState: Sort) { 
+    if (sortState.direction) {
+    this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+  } else {
+    this._liveAnnouncer.announce('Sorting cleared');
+  }
+}
+    
   ngAfterViewInit() {
     // Assign the data to the data source for the table to render
 
     this.getProducts();
+    this.dataSource.sort = this.sort;
   }
 
   applyFilter(event: Event) {

@@ -41,6 +41,7 @@
         <div class="col-md-4">
           <mat-form-field appearance="fill">
             <mat-label>Last Name</mat-label>
+      
             <input matInput formControlName="last_name" />
             <mat-error *ngIf="addexaminer.controls.last_name.errors?.required"
               >Last name is required
@@ -75,7 +76,7 @@
               formControlName="user_email"
             />
             <mat-error *ngIf="addexaminer.controls.user_email.errors?.required"
-              >Email is required
+              >E-mail is required
             </mat-error>
             <mat-error *ngIf="addexaminer.controls.user_email.errors?.email"
               >Please enter vaild email Id.
