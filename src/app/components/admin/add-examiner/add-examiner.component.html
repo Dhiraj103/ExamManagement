@@ -31,7 +31,7 @@
 
         <div class="col-md-4">
           <mat-form-field appearance="fill">
-            <mat-label>Name</mat-label>
+            <mat-label>First Name</mat-label>
             <input matInput formControlName="user_name" />
             <mat-error *ngIf="addexaminer.controls.user_name.errors?.required"
               >Name is required
@@ -174,7 +174,7 @@
           <label for="">Profile Picture</label> <br />
           <input type="file" id="my_file" (change)="readUrl($event)" />
         </div>
-        
+
         <div class="col-md-12" style="padding-bottom: 24%">
           <button
             type="submit"
