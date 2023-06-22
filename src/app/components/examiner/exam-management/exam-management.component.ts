@@ -1,12 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort,Sort  } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PageEvent } from '@angular/material/paginator';
 import { ExaminerPanelService } from 'src/app/services/examiner-panel.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+import {LiveAnnouncer} from '@angular/cdk/a11y';
+
 // import { ExaminerPanelService } from 'src/app/services/examiner-panel.service';
 declare var $: any;
 @Component({
@@ -45,12 +47,21 @@ export class ExamManagementComponent implements OnInit {
     private router: Router,
     private examinerMana: ExaminerPanelService,
     private _snackBar: MatSnackBar,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private _liveAnnouncer: LiveAnnouncer
   ) {}
 
   ngOnInit(): void {
     this.getExaminerExamManagementList();
+    this.dataSource.sort = this.sort;
   }
+  announceSortChange(sortState: Sort) { 
+    if (sortState.direction) {
+    this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+  } else {
+    this._liveAnnouncer.announce('Sorting cleared');
+  }
+}
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.filterName = filterValue.trim().toLowerCase();
