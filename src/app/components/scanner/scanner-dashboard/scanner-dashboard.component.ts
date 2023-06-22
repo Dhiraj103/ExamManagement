@@ -2,12 +2,14 @@ import { ExaminerService } from './../../../services/examiner.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort,Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ScannerPanelService } from 'src/app/services/scanner-panel.service';
 import { groupBy } from 'lodash';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {LiveAnnouncer} from '@angular/cdk/a11y';
+
 declare var $: any;
 @Component({
   selector: 'app-scanner-dashboard',
@@ -50,14 +52,24 @@ export class ScannerDashboardComponent implements OnInit {
     private fb: FormBuilder,
     private ExaminerService: ExaminerService,
     private scannerService: ScannerPanelService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private _liveAnnouncer: LiveAnnouncer
   ) {}
 
   ngOnInit(): void {
     this.loadForm();
     this.getScannerDashboardList();
     this.getExaminer();
+    this.dataSource.sort = this.sort;
   }
+
+  announceSortChange(sortState: Sort) { 
+    if (sortState.direction) {
+    this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+  } else {
+    this._liveAnnouncer.announce('Sorting cleared');
+  }
+}
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

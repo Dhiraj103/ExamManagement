@@ -79,11 +79,7 @@
               Completed
             </button>
           </span>
-          <span>
-            <i class="text-dark font-medium-5 fas fa-arrow-up"></i>
-            <i class="text-dark font-medium-5 fas fa-arrow-down"></i>
-          </span>
-
+        
           <span>
             <i class="text-dark font-medium-5 fas fa-filter"></i>
           </span>
@@ -93,13 +89,12 @@
 
     <div class="row">
       <div class="mat-elevation-z8 mt-4 pl-0" style="overflow-x: auto">
-        <table mat-table [dataSource]="dataSource" style="width: 100%">
+        <table mat-table [dataSource]="dataSource" style="width: 100%" matSort (matSortChange)="announceSortChange($event)">
           <!-- ID Column -->
           <ng-container matColumnDef="exam_name">
             <th
               style="width: 10rem; min-width: 10rem"
-              mat-header-cell
-              *matHeaderCellDef
+              mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"
             >
               Exam Name
             </th>
@@ -110,8 +105,7 @@
           <ng-container matColumnDef="class_name">
             <th
               style="width: 10rem; min-width: 10rem"
-              mat-header-cell
-              *matHeaderCellDef
+              mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"
             >
               Class
             </th>
@@ -122,8 +116,7 @@
           <ng-container matColumnDef="division_name">
             <th
               style="width: 10rem; min-width: 10rem"
-              mat-header-cell
-              *matHeaderCellDef
+              mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"
             >
               Division
             </th>
@@ -134,8 +127,7 @@
           <ng-container matColumnDef="subject_name">
             <th
               style="width: 10rem; min-width: 10rem"
-              mat-header-cell
-              *matHeaderCellDef
+              mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"
             >
               Subject
             </th>
@@ -145,8 +137,7 @@
           <ng-container matColumnDef="year_name">
             <th
               style="width: 10rem; min-width: 10rem"
-              mat-header-cell
-              *matHeaderCellDef
+              mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"
             >
               Year
             </th>
@@ -158,8 +149,7 @@
           <ng-container matColumnDef="semester_name">
             <th
               style="width: 10rem; min-width: 10rem"
-              mat-header-cell
-              *matHeaderCellDef
+              mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"
             >
               Semester
             </th>
@@ -171,8 +161,7 @@
           <ng-container matColumnDef="exam_date">
             <th
               style="width: 10rem; min-width: 10rem"
-              mat-header-cell
-              *matHeaderCellDef
+              mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"
             >
               Exam Date
             </th>
