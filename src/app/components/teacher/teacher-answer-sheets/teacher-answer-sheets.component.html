@@ -1,12 +1,12 @@
 <!-- BEGIN: Content-->
 <div class="container-fluid bg-white" style="margin-left: 1rem">
-  <div class="row p-1 mt-2">
+  <div class="row p-1">
     <div class="col-4 mt-4">
       <span class="search">
         <input
           type="text"
           class="form-control"
-          placeholder="search All"
+          placeholder="Search All"
           style="height: 45px"
           (keyup)="applyFilter($event)"
         />
@@ -22,16 +22,16 @@
     <div class="col-2"></div>
 
     <div class="col-3 mt-4">
-      <select class="form-select">
-        <option selected>subject</option>
+      <select class="form-select pt-2 pb-2">
+        <option selected>Subject</option>
         <option value="1">One</option>
         <option value="2">Two</option>
         <option value="3">Three</option>
       </select>
     </div>
     <div class="col-2 mt-4">
-      <select class="form-select">
-        <option selected>class</option>
+      <select class="form-select pt-2 pb-2">
+        <option selected>Class</option>
         <option value="1">One</option>
         <option value="2">Two</option>
         <option value="3">Three</option>
