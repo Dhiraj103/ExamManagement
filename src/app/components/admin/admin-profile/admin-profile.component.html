@@ -89,13 +89,18 @@
     </div>
     <div class="col-3 mt-3">
       <label>Profile image</label>
+      <br>
       <!-- <div style="margin-right: 1rem">
         <label for="">Profile Picture</label> <br />
         <input type="file" id="my_file"  />
       </div> -->
-      <div *ngIf="ImgUrl">
-        <img [src]="ImgUrl" class="img-fluid img" alt="Image">
-      </div>
+      <img style="height: 6rem; width: 5rem;margin-top: 20px;"
+      src="{{
+        ImgUrl
+      }} || ../../../../../../assets/images/default-profile-img.jpg"
+      class="img-profile rounded-circle"
+      alt="User Image"
+    />
       <!-- <div class="">
         <img *ngIf="ImgUrl" src="{{ ImgUrl }}" class="img-fluid img" />
       </div> -->

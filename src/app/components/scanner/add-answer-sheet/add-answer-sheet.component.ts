@@ -124,7 +124,7 @@ export class AddAnswerSheetComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('clicked');
+    console.log('clicked',this.addAnswer.value);
     this._snackBar.open('Uploading...', '', { duration: 0 });
     this.setSubmitting(true);
     const formData = new FormData();
@@ -173,6 +173,8 @@ export class AddAnswerSheetComponent implements OnInit {
   }
 
   readUrl(event: any) {
+    console.log("Uploaded file is:",event.target.files[0].name)
+    this.addAnswer.value.fileName=event.target.files[0].name;
     this.DocUrls = [];
     const selResult = event.target.value.split('.');
     const ext = selResult.pop().toLowerCase();
