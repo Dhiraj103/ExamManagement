@@ -28,6 +28,7 @@ import {
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { HeaderComponent } from '../header/header.component';
+import { TeacherProfileComponent } from './teacher-profile/teacher-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'teacher', pathMatch: 'full' },
@@ -60,6 +61,10 @@ const routes: Routes = [
         path: 'app-teacher-answer-sheets',
         component: TeacherAnswerSheetsComponent,
       },
+      {
+        path: 'app-teacher-profile',
+        component: TeacherProfileComponent,
+      },
     ],
   },
 ];
@@ -72,6 +77,7 @@ const routes: Routes = [
     TeacherCreateSubjectQuestionComponent,
     TeacherCreateSubjectComponent,
     TeacherAnswerSheetsComponent,
+    TeacherProfileComponent,
   ],
   imports: [
     CommonModule,

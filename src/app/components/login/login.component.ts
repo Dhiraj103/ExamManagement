@@ -137,7 +137,7 @@ this.router.navigate(['/login']);
         if (this.result.success === true) {
           console.log(this.result.data.role);
           var role = this.result.data.role;
-
+          localStorage.setItem('uid_number', this.result.data.uid_number);
           localStorage.setItem('user_id', this.result.data.id);
           localStorage.setItem('name', this.result.data.name);
           localStorage.setItem('email', this.result.data.email);

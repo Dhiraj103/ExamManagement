@@ -34,6 +34,14 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['./scanner/scanner/app-scanner-profile']);
   }
 
+  gotoTeacherProfile(){
+    this.router.navigate(['./teacher/teacher/app-teacher-profile']);
+  }
+
+  gotoExaminerProfile(){
+    this.router.navigate(['./examiner/examiner/app-examiner-profile']);
+  }
+
   openDialog(): void {
     /*const dialogRef = this.dialog.open(LogOutComponent, {
       width: '350px',

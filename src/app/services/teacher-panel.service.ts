@@ -85,4 +85,11 @@ export class TeacherPanelService {
       data
     );
   }
+
+changeTeacherPassword(data: any) {
+  return this.http.post(
+    `${environment.baseurl}change_teacher_password`,
+    data
+  );
+}
 }

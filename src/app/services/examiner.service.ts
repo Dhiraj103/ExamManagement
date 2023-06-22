@@ -25,4 +25,10 @@ export class ExaminerService {
     return this.http.post(`${environment.baseurl}update_examiner`,data);
   }
   
+  changeExaminerPassword(data: any) {
+    return this.http.post(
+      `${environment.baseurl}change_teacher_password`,
+      data
+    );
+  }
 }

@@ -30,7 +30,13 @@
       class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end"
       aria-labelledby="dropdownMenuButton1"
     >
+    <li *ngIf="role == '2'" (click)="gotoExaminerProfile()">
+      <a class="dropdown-item">Profile</a>
+    </li>
       <li *ngIf="role == '4'" (click)="gotoProfile()">
+        <a class="dropdown-item">Profile</a>
+      </li>
+      <li *ngIf="role == '3'" (click)="gotoTeacherProfile()">
         <a class="dropdown-item">Profile</a>
       </li>
       <li *ngIf="role == '5'" (click)="gotoScannerProfile()">
