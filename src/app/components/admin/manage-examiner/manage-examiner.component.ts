@@ -38,6 +38,7 @@ export class ManageExaminerComponent implements AfterViewInit {
   filterName: any = '';
   oldArray: any;
   role: any = 2;
+  dataSourceEmpty = [];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -100,6 +101,7 @@ export class ManageExaminerComponent implements AfterViewInit {
       });
     });
   }
+  
 
   handlePageEvent(event: PageEvent) {
     this.length = event.length;
