@@ -31,10 +31,10 @@
 
         <div class="col-3">
           <div class="form-group">
-            <!-- <label for="Total Que">Total Que.</label> -->
+            <!-- <label for="Total Que">Total Question</label> -->
             <!-- <input type="text" class="form-control" /> -->
             <mat-form-field appearance="fill">
-              <mat-label>Total Que.</mat-label>
+              <mat-label>Total Question</mat-label>
               <input type="number" matInput formControlName="totalQue" />
               <mat-error>Total Que is required </mat-error>
             </mat-form-field>
@@ -60,23 +60,23 @@
           <div class="row p-2 mt-3">
             <div class="col-3">
               <!-- <select class="form-select">
-                      <option selected>Select Que. Number</option>
+                      <option selected>Select Question Number</option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
                     </select> -->
               <!-- <mat-form-field appearance="fill">
-                      <mat-label>Select Que. Number</mat-label>
+                      <mat-label>Select Question Number</mat-label>
                       <mat-select formControlName="queNumber">
                         <mat-option value="Hindi">Hindi</mat-option>
                         <mat-option value="English">English</mat-option>
                         <mat-option value="Maths">Maths</mat-option>
                         <mat-option value="Science">Science</mat-option>
                       </mat-select>
-                      <mat-error>Que. Number is required </mat-error>
+                      <mat-error>Question Number is required </mat-error>
                     </mat-form-field> -->
               <mat-form-field appearance="fill" style="padding-left: 0px;">
-                <mat-label>Select Que. Number</mat-label>
+                <mat-label>Select Question Number</mat-label>
                 <mat-select formControlName="queNumber">
                   <mat-option
                     *ngFor="let queNumber of TeacherQuestionNumberList"
@@ -85,29 +85,29 @@
                     {{ queNumber.question_number }}</mat-option
                   >
                 </mat-select>
-                <mat-error>Que. Number is required</mat-error>
+                <mat-error>Question Number is required</mat-error>
               </mat-form-field>
             </div>
 
             <div class="col-3">
               <!-- <select class="form-select">
-                      <option selected>Select Que. Type</option>
+                      <option selected>Select Question Type</option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
                     </select> -->
               <!-- <mat-form-field appearance="fill">
-                      <mat-label>Select Que. Type</mat-label>
+                      <mat-label>Select Question Type</mat-label>
                       <mat-select formControlName="queType">
                         <mat-option value="Hindi">Hindi</mat-option>
                         <mat-option value="English">English</mat-option>
                         <mat-option value="Maths">Maths</mat-option>
                         <mat-option value="Science">Science</mat-option>
                       </mat-select>
-                      <mat-error>Que. Type is required </mat-error>
+                      <mat-error>Question Type is required </mat-error>
                     </mat-form-field> -->
               <!-- <mat-form-field appearance="fill">
-                        <mat-label>Select Que. Type</mat-label>
+                        <mat-label>Select Question Type</mat-label>
                         <mat-select formControlName="queType">
                           <mat-option
                             *ngFor="let queType of TeacherQuestionTypeList"
@@ -116,10 +116,10 @@
                             {{ queType.question_type }}</mat-option
                           >
                         </mat-select>
-                        <mat-error>Que. Type is required</mat-error>
+                        <mat-error>Question Type is required</mat-error>
                       </mat-form-field> -->
               <mat-form-field appearance="fill">
-                <mat-label>Select Que. Type</mat-label>
+                <mat-label>Select Question Type</mat-label>
                 <mat-select
                   formControlName="queType"
                   (selectionChange)="onQueTypeChange($event)"
@@ -131,19 +131,19 @@
                     {{ queType.question_type }}</mat-option
                   >
                 </mat-select>
-                <mat-error>Que. Type is required</mat-error>
+                <mat-error>Question Type is required</mat-error>
               </mat-form-field>
             </div>
 
             <div class="col-3">
               <!-- <select class="form-select">
-                      <option selected>Select Que. Part</option>
+                      <option selected>Select Question Part</option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
                     </select> -->
               <mat-form-field appearance="fill">
-                <mat-label>Select Que. Part</mat-label>
+                <mat-label>Select Question Part</mat-label>
                 <mat-select formControlName="quePart">
                   <mat-option
                     *ngFor="let quePart of TeacherQuestionPartList"
@@ -152,7 +152,7 @@
                     {{ quePart.question_part }}</mat-option
                   >
                 </mat-select>
-                <mat-error>Que. Part is required </mat-error>
+                <mat-error>Question Part is required </mat-error>
               </mat-form-field>
             </div>
           </div>
@@ -163,10 +163,10 @@
                 <!-- <input
                         type="text"
                         class="form-control"
-                        placeholder="write que. here"
+                        placeholder="write Question here"
                       /> -->
                 <mat-form-field appearance="fill">
-                  <mat-label>write que. here</mat-label>
+                  <mat-label>write Question here</mat-label>
                   <input matInput formControlName="questions" />
                   <mat-error>Question is required </mat-error>
                 </mat-form-field>
@@ -175,13 +175,13 @@
 
             <div class="col-3">
               <!-- <select class="form-select">
-                      <option selected>Select Que. Mark</option>
+                      <option selected>Select Question Mark</option>
                       <option value="1">One</option>
                       <option value="2">Two</option>
                       <option value="3">Three</option>
                     </select> -->
               <mat-form-field appearance="fill">
-                <mat-label>Select Que. Mark</mat-label>
+                <mat-label>Select Question Mark</mat-label>
                 <mat-select formControlName="queMark">
                   <mat-option
                     *ngFor="let queMark of TeacherQuestionMarkList"
@@ -190,7 +190,7 @@
                     {{ queMark.question_mark }}</mat-option
                   >
                 </mat-select>
-                <mat-error>Que. Mark is required </mat-error>
+                <mat-error>Question Mark is required </mat-error>
               </mat-form-field>
             </div>
           </div>

@@ -1,3 +1,7 @@
+<tr ng-if="data.length === 0">
+  <td> No data available </td>
+</tr>
+
 <div class="container">
   <div class="row">
     <form *ngIf="result" [formGroup]="editExaminer" (ngSubmit)="onSubmit()">
