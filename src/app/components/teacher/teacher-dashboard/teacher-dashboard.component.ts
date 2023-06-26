@@ -45,6 +45,13 @@ export class TeacherDashboardComponent implements OnInit {
     this.getExamDetails();
     this.dataSource.sort = this.sort;
   }
+  announceSortChange(sortState: Sort) { 
+    if (sortState.direction) {
+    this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+  } else {
+    this._liveAnnouncer.announce('Sorting cleared');
+  }
+}
   navigateCreateSubject() {
     this.router.navigate(['./teacher/teacher/app-teacher-create-subject']);
   }
@@ -61,13 +68,7 @@ export class TeacherDashboardComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  announceSortChange(sortState: Sort) { 
-    if (sortState.direction) {
-    this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-  } else {
-    this._liveAnnouncer.announce('Sorting cleared');
-  }
-}
+  
 
   getExamDetails() {
     this._examiner_panel.getExamList(this.data).subscribe((res) => {
