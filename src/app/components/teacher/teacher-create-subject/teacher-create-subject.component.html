@@ -2,19 +2,10 @@
   <div class="card-body">
     <form [formGroup]="createSubject">
       <div class="row p-2 mb-0">
-        <div class="col-4">
-          <div class="form-group">
-           
-            <mat-form-field appearance="fill" style="margin-bottom: 0px;">
-              <mat-label>Add Instructions</mat-label>
-              <input type="text" matInput formControlName="addInstructions" />
-              <mat-error>Instructions is required </mat-error>
-            </mat-form-field>
-          </div>
-        </div>
+
       </div>
       <div class="row p-2">
-        <div class="col-2">
+        <div class="col-3">
           <div class="form-group">
             <!-- <label for="Total Marks">Total Marks</label>
                 <input type="text" class="form-control" /> -->
@@ -26,7 +17,7 @@
           </div>
         </div>
 
-        <div class="col-2">
+        <div class="col-3">
           <div class="form-group">
             <!-- <label for="Pass Marks">Pass Marks</label>
                 <input type="text" class="form-control" /> -->
@@ -38,7 +29,7 @@
           </div>
         </div>
 
-        <div class="col-2">
+        <div class="col-3">
           <div class="form-group">
             <!-- <label for="Total Que">Total Que.</label> -->
             <!-- <input type="text" class="form-control" /> -->
@@ -49,12 +40,24 @@
             </mat-form-field>
           </div>
         </div>
+
+        <div class="col-9">
+          <div class="form-group">
+           
+            <mat-form-field appearance="fill" style="margin-bottom: 0px;">
+              <mat-label>Add Instructions</mat-label>
+              <!-- <input type="text" matInput formControlName="addInstructions" /> -->
+              <textarea matInput rows="3" cols="33"></textarea>
+              <mat-error>Instructions is required </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
       </div>
-      <h3 style="padding-left: 40px">Add Que.</h3>
+      <h3 style="padding-left: 40px">Add Question</h3>
 
       <div class="row p-2">
         <div class="card">
-          <div class="row p-2">
+          <div class="row p-2 mt-3">
             <div class="col-3">
               <!-- <select class="form-select">
                       <option selected>Select Que. Number</option>
@@ -273,7 +276,7 @@
                 class="btn text-white"
                 style="background-color: #4b78bb"
               >
-                Add Que. Paper
+                Add Question Paper
               </button>
             </div>
           </div>

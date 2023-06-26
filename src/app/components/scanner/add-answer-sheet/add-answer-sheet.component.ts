@@ -93,6 +93,7 @@ export class AddAnswerSheetComponent implements OnInit {
       semester: ['', Validators.compose([Validators.required])],
       class: ['', Validators.compose([Validators.required])],
       division: ['', Validators.compose([Validators.required])],
+   
     });
   }
 
@@ -125,7 +126,7 @@ export class AddAnswerSheetComponent implements OnInit {
 
   onSubmit() {
     console.log('clicked',this.addAnswer.value);
-    this._snackBar.open('Uploading...', '', { duration: 0 });
+    this._snackBar.open('Uploading...', 'Dismiss', { duration: 0 });
     this.setSubmitting(true);
     const formData = new FormData();
     this.roleId = localStorage.getItem('role');
@@ -139,6 +140,7 @@ export class AddAnswerSheetComponent implements OnInit {
     formData.append('semister_id', this.addAnswer.value.semester);
     formData.append('division_id', this.addAnswer.value.division);
     formData.append('role_id', this.roleId);
+    
 
     // Append all selected files to the FormData object
     for (let i = 0; i < this.selectedFiles.length; i++) {

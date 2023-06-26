@@ -26,6 +26,7 @@ import {
 } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { ExaminerProfileComponent } from './examiner-profile/examiner-profile.component';
 // import { HeaderExaminerComponent } from './header-examiner/header-examiner.component';
 // import { SidebarExaminerComponent } from './sidebar-examiner/sidebar-examiner.component';
 // import { SidebarComponent } from '../sidebar/sidebar.component';
@@ -44,6 +45,7 @@ const routes: Routes = [
       { path: 'app-examiner-form', component: ExaminerFormComponent },
       { path: 'app-answer-sheets', component: AnswerSheetsComponent },
       { path: 'app-edit-exam/:id', component: EditExamComponent },
+      { path: 'app-examiner-profile', component: ExaminerProfileComponent },
     ],
   },
 ];
@@ -56,6 +58,7 @@ const routes: Routes = [
     ResultManagementComponent,
     ExaminerFormComponent,
     AnswerSheetsComponent,
+    ExaminerProfileComponent,
   ],
   imports: [
     CommonModule,
