@@ -75,6 +75,7 @@ export class AddStudentComponent implements OnInit {
     this.loadForm();
     this.getInstitutes();
   }
+
   getExaminerClassList() {
     this._examiner_panel.getClassList(this.data).subscribe((res) => {
       this.examinerclassListData = res;
@@ -156,7 +157,7 @@ export class AddStudentComponent implements OnInit {
     this.role = 4;
 
     formData.append('uid_number', this.addexaminer.value.employee_id);
-    formData.append('name', this.addexaminer.value.user_name);
+    formData.append('firstname', this.addexaminer.value.user_name);
     formData.append('lastname', this.addexaminer.value.last_name);
     formData.append('email', this.addexaminer.value.user_email);
     formData.append('password', this.addexaminer.value.user_password);

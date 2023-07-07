@@ -65,7 +65,7 @@ export class AddExaminerComponent implements OnInit {
     this.loadForm();
     this.getInstitutes();
   }
-
+ 
   getInstitutes() {
     this._institute.getInstituteList().subscribe((res) => {
       this.institutedata = res;
@@ -130,8 +130,8 @@ export class AddExaminerComponent implements OnInit {
     this.role = 2;
 
     formData.append('institute_id', this.addexaminer.value.institute);
-   
-    formData.append('name', this.addexaminer.value.user_name);
+    formData.append('uid_number', this.addexaminer.value.employee_id);
+    formData.append('firstname', this.addexaminer.value.user_name);
     formData.append('name', this.addexaminer.value.Last_name);
     formData.append('email', this.addexaminer.value.user_email);
     formData.append('password', this.addexaminer.value.user_password);
@@ -140,8 +140,9 @@ export class AddExaminerComponent implements OnInit {
     formData.append('aadhar_number', this.addexaminer.value.aadhar_number);
     formData.append('address', this.addexaminer.value.address);
     formData.append('image', this.selectedFile);
-    formData.append('role', this.role);
-    console.log(this.addexaminer.value.user_password);
+    formData.append('role', "this.role");
+    console.log(this.addexaminer.value);
+    // console.log(this.addexaminer.value.user_password);
     this._examiner.saveExaminer(formData).subscribe((res) => {
       this.data = res;
       if (this.data.success == true) {
