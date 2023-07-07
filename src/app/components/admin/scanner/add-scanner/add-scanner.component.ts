@@ -119,7 +119,7 @@ export class AddScannerComponent implements OnInit {
 
     formData.append('institute_id', this.addexaminer.value.institute);
     formData.append('uid_number', this.addexaminer.value.employee_id);
-    formData.append('name', this.addexaminer.value.user_name);
+    formData.append('firstname', this.addexaminer.value.user_name);
     formData.append('lastname', this.addexaminer.value.last_name);
     formData.append('email', this.addexaminer.value.user_email);
     formData.append('password', this.addexaminer.value.user_password);

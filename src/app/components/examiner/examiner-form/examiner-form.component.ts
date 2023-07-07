@@ -101,10 +101,7 @@ export class ExaminerFormComponent implements OnInit {
     // console.log(this.role);
   }
 
-  navigateDashboard() {
-    this.router.navigate(['/admin/admin/app-exam-management']);
-  }
-
+  
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
       duration: 2000,
@@ -117,7 +114,7 @@ export class ExaminerFormComponent implements OnInit {
       // console.log(this.examinerclassList);
     });
   }
-
+  
   getExaminerAcademicYearList() {
     this._examiner_panel.getAcademicYearList(this.data).subscribe((res) => {
       this.examinerAcademicYearListData = res;
@@ -125,7 +122,7 @@ export class ExaminerFormComponent implements OnInit {
       // console.log(this.examinerAcademicYearList);
     });
   }
-
+  
   getExaminerSemesterList() {
     this._examiner_panel.getSemesterList(this.data).subscribe((res) => {
       this.examinerSemesterListData = res;
@@ -133,7 +130,7 @@ export class ExaminerFormComponent implements OnInit {
       // console.log(this.examinerSemesterList);
     });
   }
-
+  
   getExaminerDivisionList() {
     this._examiner_panel.getDivisionList(this.data).subscribe((res) => {
       this.examinerDivisionListData = res;
@@ -141,7 +138,10 @@ export class ExaminerFormComponent implements OnInit {
       // console.log(this.examinerDivisionList);
     });
   }
-
+  navigateDashboard() {
+    this.router.navigate(['/examiner/examiner/app-examiner-dashboard']);
+  }
+  
   getExaminerQuestionPaperList() {
     this._examiner_panel.getQuestionPaperList(this.data).subscribe((res) => {
       this.examinerQuestionPaperListData = res;
@@ -149,7 +149,7 @@ export class ExaminerFormComponent implements OnInit {
       // console.log(this.examinerQuestionPaperList);
     });
   }
-
+  
   getExaminerAnswerPaperList() {
     this._examiner_panel.getAnswerPaperList(this.data).subscribe((res) => {
       this.examinerAnswerPaperListData = res;
@@ -157,7 +157,7 @@ export class ExaminerFormComponent implements OnInit {
       // console.log(this.examinerAnswerPaperList);
     });
   }
-
+  
   getExaminerExamList() {
     this._examiner_panel.getExamList(this.data).subscribe((res) => {
       this.examinerExamListData = res;
@@ -175,51 +175,51 @@ export class ExaminerFormComponent implements OnInit {
       // console.log(this.dataSource);
     });
   }
-
+  
   handlePageEvent(event: PageEvent) {
     this.length = event.length;
     this.pageSize = event.pageSize;
     this.pageIndex = event.pageIndex;
-
+    
     this.getExaminerExamList();
   }
-
+  
   examDateRangeValidator(
     examStartDateControlName: 'exam_start_date',
     examEndDateControlName: 'exam_end_date'
-  ): ValidatorFn {
-    return (control: AbstractControl): { [key: string]: any } | null => {
-      const examStartDateControl = control.get(examStartDateControlName);
-      const examEndDateControl = control.get(examEndDateControlName);
-
-      if (
-        examStartDateControl?.value &&
-        examEndDateControl?.value &&
+    ): ValidatorFn {
+      return (control: AbstractControl): { [key: string]: any } | null => {
+        const examStartDateControl = control.get(examStartDateControlName);
+        const examEndDateControl = control.get(examEndDateControlName);
+        
+        if (
+          examStartDateControl?.value &&
+          examEndDateControl?.value &&
         examStartDateControl.value > examEndDateControl.value
-      ) {
-        examEndDateControl.setErrors({ dateRange: true });
-        return { dateRange: true };
-      }
-
-      return null;
-    };
-  }
-
-  // onlyDateFilter = (date: Date) => {
-  //   const day = date.getUTCDay();
-  //   return day === 0 || day === 6;
-  // }
-
-  loadForm() {
-    this.addexam = this.fb.group(
-      {
-        exam_name: ['', Validators.compose([Validators.required])],
-        class: ['', Validators.compose([Validators.required])],
-        division: ['', Validators.compose([Validators.required])],
-        academic_year: ['', Validators.compose([Validators.required])],
-        semester: ['', Validators.compose([Validators.required])],
-        exam_start_date: ['', Validators.compose([Validators.required])],
-        exam_end_date: ['', Validators.compose([Validators.required])],
+        ) {
+          examEndDateControl.setErrors({ dateRange: true });
+          return { dateRange: true };
+        }
+        
+        return null;
+      };
+    }
+    
+    // onlyDateFilter = (date: Date) => {
+      //   const day = date.getUTCDay();
+      //   return day === 0 || day === 6;
+      // }
+      
+      loadForm() {
+        this.addexam = this.fb.group(
+          {
+            exam_name: ['', Validators.compose([Validators.required])],
+            class: ['', Validators.compose([Validators.required])],
+            division: ['', Validators.compose([Validators.required])],
+            academic_year: ['', Validators.compose([Validators.required])],
+            semester: ['', Validators.compose([Validators.required])],
+            exam_start_date: ['', Validators.compose([Validators.required])],
+            exam_end_date: ['', Validators.compose([Validators.required])],
         // exam_start_date: ['', Validators.compose([Validators.required])],
         subject_name: ['', Validators.compose([Validators.required])],
         total_marks: ['', Validators.compose([Validators.required])],
@@ -233,25 +233,25 @@ export class ExaminerFormComponent implements OnInit {
         validators: this.examDateRangeValidator(
           'exam_start_date',
           'exam_end_date'
-        ),
+          ),
+        }
+        );
       }
-    );
-  }
-
-  onSubmit() {
-    const formData = new FormData();
-    let getDatePicker1 = this.addexam.value.exam_start_date;
-    let getDatePicker2 = this.addexam.value.exam_end_date;
-    let getDatePicker3 = this.addexam.value.exam_date;
-    //let dateFormat1 = this.datepipe.transform(getDatePicker1, 'dd-MM-yyyy');
-    let dateFormat1 = this.datepipe.transform(getDatePicker1, 'yyyy-MM-dd');
-    this.date1 = dateFormat1;
-    let dateFormat2 = this.datepipe.transform(getDatePicker2, 'yyyy-MM-dd');
-    this.date2 = dateFormat2;
+      
+      onSubmit() {
+        const formData = new FormData();
+        let getDatePicker1 = this.addexam.value.exam_start_date;
+        let getDatePicker2 = this.addexam.value.exam_end_date;
+        let getDatePicker3 = this.addexam.value.exam_date;
+        //let dateFormat1 = this.datepipe.transform(getDatePicker1, 'dd-MM-yyyy');
+        let dateFormat1 = this.datepipe.transform(getDatePicker1, 'yyyy-MM-dd');
+        this.date1 = dateFormat1;
+        let dateFormat2 = this.datepipe.transform(getDatePicker2, 'yyyy-MM-dd');
+        this.date2 = dateFormat2;
 
     let dateFormat3 = this.datepipe.transform(getDatePicker3, 'yyyy-MM-dd');
     this.date3 = dateFormat3;
-
+    
     const time = new Date(`1/1/2022 ${this.addexam.value.exam_time}`);
     const timeString = time.toLocaleTimeString([], {
       hour: 'numeric',
@@ -271,7 +271,7 @@ export class ExaminerFormComponent implements OnInit {
         exam_time: this.time,
       },
     ];
-
+    
     formData.append('role_id', this.role);
     formData.append('exam_name', this.addexam.value.exam_name);
     console.log(this.exam_name);
@@ -282,7 +282,7 @@ export class ExaminerFormComponent implements OnInit {
     formData.append('exam_start_date', this.date1);
     formData.append('exam_end_date', this.date2);
     formData.append('subject_list', JSON.stringify(subjectList));
-
+    
     this._examiner_panel.addExam(formData).subscribe((res) => {
       this.data = res;
       this.openSnackBar('Exam Added Successfully!', 'dismiss');
