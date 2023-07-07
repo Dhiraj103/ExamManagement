@@ -20,6 +20,14 @@ span {
   border-radius: 8px 8px 8px 8px;
 }
 
+.spinner-grow text-primary{
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+
+}
+
 .multipleChoiceInput {
   display: flex;
   flex-direction: row;

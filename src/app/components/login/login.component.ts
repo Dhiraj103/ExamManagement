@@ -176,8 +176,12 @@ this.router.navigate(['/login']);
               relativeTo: this.route,
             });
           }
-        } else {
+        }  else {
+         
           this.router.navigate(['/login'], { relativeTo: this.route });
+          alert("Wrong Username Or Password");
+          this.spinnerDisplay=false;
+
         }
       },
       (error) => {
@@ -186,7 +190,7 @@ this.router.navigate(['/login']);
         }
       }
     );
-   }else{
+   }else {
     alert("Please enter username and password");
    }
     console.log(formData.getAll('email'));

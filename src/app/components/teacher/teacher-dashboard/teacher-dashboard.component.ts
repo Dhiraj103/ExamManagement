@@ -30,6 +30,7 @@ export class TeacherDashboardComponent implements OnInit {
   length: any;
   pageIndex: any;
   pageSize = 10;
+  loader=true;
   filterName: any = '';
   route: ActivatedRoute | null | undefined;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -44,6 +45,9 @@ export class TeacherDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.getExamDetails();
     this.dataSource.sort = this.sort;
+    setTimeout(()=>{                           
+      this.loader = false;
+  }, 1000);
   }
   announceSortChange(sortState: Sort) { 
     if (sortState.direction) {

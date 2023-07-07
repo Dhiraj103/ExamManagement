@@ -74,7 +74,7 @@ export class AddTeacherComponent implements OnInit {
   loadForm() {
     this.addexaminer = this.fb.group({
       institute: ['', Validators.compose([Validators.required])],
-      employee_id: ['', Validators.compose([Validators.required])],
+     
       user_name: ['', Validators.compose([Validators.required])],
       last_name: ['', Validators.compose([Validators.required])],
 
@@ -119,7 +119,6 @@ export class AddTeacherComponent implements OnInit {
     this.role = 3;
 
     formData.append('institute_id', this.addexaminer.value.institute);
-    formData.append('uid_number', this.addexaminer.value.employee_id);
     formData.append('name', this.addexaminer.value.user_name);
     formData.append('lastname', this.addexaminer.value.last_name);
     formData.append('email', this.addexaminer.value.user_email);

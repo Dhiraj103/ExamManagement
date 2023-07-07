@@ -48,7 +48,7 @@ export class TeacherCreateSubjectComponent implements OnInit {
   isMultiThreeCorrect = 0;
   isMultiFourCorrect = 0;
   CreateSubjectId: any;
-
+  loader = true;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -62,6 +62,10 @@ export class TeacherCreateSubjectComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   
+    setTimeout(()=>{                           
+      this.loader = false;
+  }, 1000);
     this.loadForm();
     this.getTeacherQuestionNumberList();
     this.getTeacherQuestionTypeList();
