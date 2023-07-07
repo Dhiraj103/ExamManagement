@@ -1,17 +1,23 @@
 <div class="card ml-3" style="height: auto">
   <div class="card-body">
     <form [formGroup]="createSubject">
-      <div class="row p-2 mb-0">
-
-      </div>
+      <div class="row p-2 mb-0" >
+        <div class="spinner-border text-primary m-1" justify-content-center style="width: 3rem; height: 3rem;" role="status" *ngIf="loader">
+         
+          <span class="visually-hidden"><h2>Loading...</h2></span>
+         
+        </div>
+       
+        <!--Loader Div Ends-->
+        <div class="container-fluid bg-image" *ngIf="!loader">
       <div class="row p-2">
         <div class="col-3">
           <div class="form-group">
             <!-- <label for="Total Marks">Total Marks</label>
                 <input type="text" class="form-control" /> -->
             <mat-form-field appearance="fill">
-              <mat-label>Total Marks</mat-label>
-              <input type="number" matInput formControlName="totalMarks" />
+              <mat-label >Total Marks</mat-label>
+              <input type="number" min="1" matInput formControlName="totalMarks" />
               <mat-error>Total Marks is required </mat-error>
             </mat-form-field>
           </div>
@@ -23,7 +29,7 @@
                 <input type="text" class="form-control" /> -->
             <mat-form-field appearance="fill">
               <mat-label>Pass Marks</mat-label>
-              <input type="number" matInput formControlName="PassMarks" />
+              <input type="number" min="1" matInput formControlName="PassMarks" />
               <mat-error>Pass Marks is required </mat-error>
             </mat-form-field>
           </div>
@@ -35,7 +41,7 @@
             <!-- <input type="text" class="form-control" /> -->
             <mat-form-field appearance="fill">
               <mat-label>Total Question</mat-label>
-              <input type="number" matInput formControlName="totalQue" />
+              <input type="number" min="1" matInput formControlName="totalQue" />
               <mat-error>Total Que is required </mat-error>
             </mat-form-field>
           </div>
@@ -305,8 +311,10 @@
           >
             save
           </button>
+          </div>
         </div>
       </div>
+    </div>
     </form>
   </div>
 </div>

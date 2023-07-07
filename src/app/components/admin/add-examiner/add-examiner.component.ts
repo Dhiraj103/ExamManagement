@@ -130,7 +130,7 @@ export class AddExaminerComponent implements OnInit {
     this.role = 2;
 
     formData.append('institute_id', this.addexaminer.value.institute);
-    formData.append('uid_number', this.addexaminer.value.employee_id);
+   
     formData.append('name', this.addexaminer.value.user_name);
     formData.append('name', this.addexaminer.value.Last_name);
     formData.append('email', this.addexaminer.value.user_email);
