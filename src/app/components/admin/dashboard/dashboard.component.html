@@ -1,4 +1,85 @@
 <!-- <p>dashboard works!</p> -->
-<tr ng-if="data.length === 0">
-    <td> No data available </td>
-</tr>
+<div
+  class="row"
+  style="padding: 10px 15px 10px 1px;margin-left: 0rem"
+>
+  <div class="col-lg-6">
+    <div class="card" style="height: 360px">
+      <div class="card-body">
+        <div id="chartContainer1" style="height: 280px; width: 100%"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card" style="height: 360px">
+      <div class="card-body">
+        <canvas id="myCharts" style="width: 100%"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white" style="margin: 0px 10px 0px 10px;">
+  <div class="row" style="padding-bottom: 10px;">
+    <div class="col-lg-4 mt-3" style="margin-left: 1rem;">
+      <span class="search">
+        <input
+          type="text"
+        
+          class="form-control p-1"
+          placeholder="Search ..."
+          style="height: 45px"
+        />
+      </span>
+    </div>
+
+    <div class="col-lg-7 mt-3" style="margin-right: 1rem">
+      <div
+        style="
+          float: right;
+          float: right;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        "
+      >
+        <span style="display: flex; gap: 1rem">
+          <button
+            href=""
+            class="btn text-white"
+            style="background-color: #4b78bb"
+          >
+            Schedule
+          </button>
+          <button
+            href=""
+            class="btn"
+            style="
+              color: #4b78bb;
+              background-color: #fff;
+              border: 2px solid #4b78bb; ;
+            "
+          >
+            Pending
+          </button>
+          <button
+            href=""
+            class="btn"
+            style="
+              color: #4b78bb;
+              background-color: #fff;
+              border: 2px solid #4b78bb; ;
+            "
+          >
+            Completed
+          </button>
+        </span>
+      
+        <span>
+          <i class="text-dark font-medium-5 fas fa-filter"></i>
+          <i class="fa-solid fa-arrow-down-arrow-up"></i>
+          <i class="bi bi-arrow-down-up"></i>
+        </span>
+      </div>
+    </div>
+  </div>
